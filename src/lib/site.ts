@@ -6,6 +6,9 @@ export const site = {
   phoneDisplay: "+56 9 5207 9863",
   phoneTel: "+56952079863",
   whatsapp: "https://wa.me/56952079863",
+  whatsappReserve:
+    "https://wa.me/56952079863?text=" +
+    encodeURIComponent("Hola, quiero reservar en Cedrus."),
   facebookLabel: "Cedrus café Restaurant",
   facebookUrl: "https://www.facebook.com/restaurant.cafeteria.bar",
   instagramLabel: "@cedruscafe",

@@ -72,7 +72,9 @@ export default async function HomePage() {
                 Carta de hoy
               </a>
               <a
-                href="/contacto"
+                href={site.whatsappReserve}
+                target="_blank"
+                rel="noreferrer"
                 className="rounded-full border border-cream/40 px-6 py-3 text-sm uppercase tracking-widest text-cream"
               >
                 Reservar
