@@ -1,0 +1,17 @@
+export const site = {
+  name: "Cedrus",
+  tagline: "Café · Restaurant",
+  legalName: "Café Restaurant Cedrus",
+  address: "Palazuelos 318, Coelemu",
+  phoneDisplay: "+56 9522079863",
+  phoneTel: "+569522079863",
+  whatsapp: "https://wa.me/569522079863",
+  facebookLabel: "Cedrus café Restaurant",
+  facebookUrl: "https://www.facebook.com/restaurant.cafeteria.bar",
+  instagramLabel: "@cedruscafe",
+  instagramUrl: "https://www.instagram.com/cedruscafe/",
+  mapsUrl:
+    "https://www.google.com/maps/search/?api=1&query=Palazuelos+318+Coelemu+Chile",
+  mapsEmbed:
+    "https://maps.google.com/maps?q=Palazuelos%20318%2C%20Coelemu%2C%20Chile&z=17&hl=es&output=embed",
+};

@@ -1,0 +1,4238 @@
+{
+  "categories": [
+    {
+      "id": "cat-desayunos",
+      "name": "Desayunos",
+      "description": "Todos los desayunos disponibles hasta las 12:00.",
+      "sortOrder": 1
+    },
+    {
+      "id": "cat-cafeteria",
+      "name": "Cafetería",
+      "description": "Cafés, tés y chocolates.",
+      "sortOrder": 2
+    },
+    {
+      "id": "cat-ensaladas",
+      "name": "Ensaladas",
+      "description": "Ensaladas de la casa.",
+      "sortOrder": 3
+    },
+    {
+      "id": "cat-bowls",
+      "name": "Bowls",
+      "description": "Base de todos los bowls: arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo.",
+      "sortOrder": 4
+    },
+    {
+      "id": "cat-platos",
+      "name": "Platos",
+      "description": "Carnes, pescados y aves al plato.",
+      "sortOrder": 5
+    },
+    {
+      "id": "cat-nino",
+      "name": "Menú opción niño",
+      "description": "Menores de 12 años. Solo en horario de almuerzo. Incluye entrada, plato y postre tutifruti.",
+      "sortOrder": 6
+    },
+    {
+      "id": "cat-sandwichs",
+      "name": "Sandwichs",
+      "description": "Sanguches, lomitos y hamburguesas.",
+      "sortOrder": 7
+    },
+    {
+      "id": "cat-completos",
+      "name": "Completos",
+      "description": "Completos y vienesas.",
+      "sortOrder": 8
+    },
+    {
+      "id": "cat-fajitas",
+      "name": "Fajitas",
+      "description": "Fajitas de la casa.",
+      "sortOrder": 9
+    },
+    {
+      "id": "cat-agregados",
+      "name": "Agregados",
+      "description": "Extras para armar tu plato.",
+      "sortOrder": 10
+    },
+    {
+      "id": "cat-tablas",
+      "name": "Tablas",
+      "description": "Para compartir.",
+      "sortOrder": 11
+    },
+    {
+      "id": "cat-papas",
+      "name": "Papas fritas",
+      "description": "Papas, salchipapas y papas mixtas.",
+      "sortOrder": 12
+    },
+    {
+      "id": "cat-pizzas",
+      "name": "Pizzas",
+      "description": "Las puedes pedir enteras o 1/2.",
+      "sortOrder": 13
+    },
+    {
+      "id": "cat-pasteleria",
+      "name": "Pastelería",
+      "description": "Tortas según la disponibilidad del día.",
+      "sortOrder": 14
+    },
+    {
+      "id": "cat-heladeria",
+      "name": "Heladería",
+      "description": "Copas, shakes y helados.",
+      "sortOrder": 15
+    },
+    {
+      "id": "cat-bebidas-jugos",
+      "name": "Bebidas y jugos",
+      "description": "Jugos, limonadas, aguas y bebidas.",
+      "sortOrder": 16
+    },
+    {
+      "id": "cat-cervezas",
+      "name": "Cervezas",
+      "description": "Cervezas de botella.",
+      "sortOrder": 17
+    },
+    {
+      "id": "cat-schop",
+      "name": "Schop",
+      "description": "Para micheladas, agregado de $700 al precio normal.",
+      "sortOrder": 18
+    },
+    {
+      "id": "cat-tragos",
+      "name": "Tragos",
+      "description": "Cócteles de la casa.",
+      "sortOrder": 19
+    },
+    {
+      "id": "cat-sour",
+      "name": "Sour",
+      "description": "Sours clásicos y de sabores.",
+      "sortOrder": 20
+    },
+    {
+      "id": "cat-gin",
+      "name": "Gin",
+      "description": "Gin tonic y variaciones.",
+      "sortOrder": 21
+    },
+    {
+      "id": "cat-mojitos",
+      "name": "Mojitos",
+      "description": "Mojitos tradicionales y de autor.",
+      "sortOrder": 22
+    },
+    {
+      "id": "cat-pisco",
+      "name": "Pisco",
+      "description": "Piscos solo o con bebida.",
+      "sortOrder": 23
+    },
+    {
+      "id": "cat-whisky",
+      "name": "Whisky",
+      "description": "Whiskies solo, con bebida o a las rocas.",
+      "sortOrder": 24
+    },
+    {
+      "id": "cat-vodka",
+      "name": "Vodka",
+      "description": "Vodkas solo o con bebida.",
+      "sortOrder": 25
+    }
+  ],
+  "products": [
+    {
+      "id": "prod-huevos-tocino",
+      "name": "Huevos revueltos con tocino",
+      "description": "Huevos revueltos con tocino.",
+      "price": 3990,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-huevos-jamon",
+      "name": "Huevos revueltos con jamón",
+      "description": "Huevos revueltos con jamón.",
+      "price": 3600,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-huevos-queso",
+      "name": "Huevos revueltos con queso",
+      "description": "Huevos revueltos con queso.",
+      "price": 3400,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-huevos-solo",
+      "name": "Huevos revueltos solo",
+      "description": "Huevos revueltos.",
+      "price": 3000,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tostadas-palta",
+      "name": "Tostadas con palta",
+      "description": "Tostadas con palta.",
+      "price": 3700,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tostadas-mantequilla",
+      "name": "Tostadas con mantequilla",
+      "description": "Tostadas con mantequilla.",
+      "price": 2800,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tostadas-mermelada",
+      "name": "Tostadas con mermelada",
+      "description": "Tostadas con mermelada casera.",
+      "price": 2900,
+      "categoryId": "cat-desayunos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cafe-moca-irlandes",
+      "name": "Café moca irlandés",
+      "description": "Base de leche caliente, chocolate, express, Baileys, crema y virutas de chocolate.",
+      "price": 4400,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cafe-bombon",
+      "name": "Café bombón",
+      "description": "Base de leche condensada, express y espuma de leche.",
+      "price": 4200,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mocaccino",
+      "name": "Mocaccino",
+      "description": "Base de leche con chocolate, express, crema chantilly y virutas de chocolate.",
+      "price": 4400,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-capuchino-grande",
+      "name": "Capuchino grande",
+      "description": "Base de leche, express y crema chantilly.",
+      "price": 4400,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cafe-manjar",
+      "name": "Café con manjar",
+      "description": "Base de manjar, express y crema chantilly.",
+      "price": 4200,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-submarino",
+      "name": "Submarino",
+      "description": "Barra de chocolate y leche.",
+      "price": 3900,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cortado-doble",
+      "name": "Cortado doble",
+      "description": "Base de leche y express.",
+      "price": 3800,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cortado-simple",
+      "name": "Cortado simple",
+      "description": "Base de leche y express.",
+      "price": 3200,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cafe-galleta",
+      "name": "Café de galleta",
+      "description": "Café de galleta.",
+      "price": 3990,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-chocolate-caliente",
+      "name": "Chocolate caliente",
+      "description": "Chocolate caliente.",
+      "price": 3400,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-express-doble",
+      "name": "Express doble",
+      "description": "Café express doble.",
+      "price": 2700,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-express-chico",
+      "name": "Express chico",
+      "description": "Café express chico.",
+      "price": 2100,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-te-dilmahn",
+      "name": "Té Dilmahn",
+      "description": "Té Dilmahn.",
+      "price": 2100,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-te-cortado-doble",
+      "name": "Té cortado doble",
+      "description": "Té cortado doble.",
+      "price": 2800,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-te-cortado-simple",
+      "name": "Té cortado simple",
+      "description": "Té cortado simple.",
+      "price": 2500,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nescafe-leche",
+      "name": "Nescafé con leche",
+      "description": "Nescafé con leche.",
+      "price": 2600,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nescafe-tradicional",
+      "name": "Nescafé tradicional",
+      "description": "Nescafé tradicional.",
+      "price": 1800,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-te-puro",
+      "name": "Té puro",
+      "description": "Té puro.",
+      "price": 1700,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-te-tetera",
+      "name": "Té en tetera",
+      "description": "30 variedades de sabores.",
+      "price": 3800,
+      "categoryId": "cat-cafeteria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cesar-camaron-pollo",
+      "name": "Cesar camarón pollo",
+      "description": "Cama de lechuga, palmitos, aceitunas, tomates, queso mantecoso y crutones.",
+      "price": 9900,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cesar-camaron",
+      "name": "Cesar camarón",
+      "description": "170 grs. (12 unidades) de camarón a la mantequilla, cama de lechuga, palmitos, aceitunas, tomates, queso mantecoso y crutones.",
+      "price": 9400,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cesar-salmon",
+      "name": "Cesar salmón",
+      "description": "250 grs. de salmón a la plancha, cama de lechuga, palmitos, aceitunas, tomates, queso mantecoso y crutones.",
+      "price": 9800,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cesar-carne",
+      "name": "Cesar carne",
+      "description": "Cama de lechuga, palmitos, aceitunas, tomate, queso y crutones.",
+      "price": 8500,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cesar-pollo",
+      "name": "Cesar pollo",
+      "description": "Cama de lechuga, palmitos, aceitunas, tomate, queso y crutones.",
+      "price": 7700,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-palta-cardenal",
+      "name": "Palta cardenal",
+      "description": "Cama de lechuga, camarones, palta, palmitos, aceitunas y tomate.",
+      "price": 8900,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-palta-reina",
+      "name": "Palta reina",
+      "description": "Cama de lechuga, pollo, palta, palmitos, aceitunas y tomate.",
+      "price": 7100,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vegetariano-atun",
+      "name": "Vegetariano atún en conserva",
+      "description": "Cama de lechuga, queso fresco, maíz, tomate, porotos verdes, palmitos, palta y atún.",
+      "price": 7100,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ensalada-cedrus",
+      "name": "Ensalada Cedrus",
+      "description": "Base de lechuga, champiñones, morrones, zanahorias, pepino, naranjas, maní, vinagreta de sésamo y camarones apanados.",
+      "price": 8800,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ensalada-huerto",
+      "name": "Ensalada del huerto",
+      "description": "Cama de lechuga, queso fresco, espárragos, palta, palmitos y aceitunas.",
+      "price": 7200,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ensalada-chef",
+      "name": "Ensalada del chef",
+      "description": "Cama de lechuga, maíz, pepino, tomates, palta, palmitos y filetes de ave.",
+      "price": 7600,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ensalada-vegetariano",
+      "name": "Vegetariano",
+      "description": "Cama de lechuga, queso fresco, maíz, tomates, porotos verdes, palmitos, palta y huevo duro.",
+      "price": 6700,
+      "categoryId": "cat-ensaladas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-camaron",
+      "name": "Bowl camarón",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con camarón.",
+      "price": 9600,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-carne",
+      "name": "Bowl carne",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con carne.",
+      "price": 8900,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-pollo",
+      "name": "Bowl pollo",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con pollo.",
+      "price": 7900,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-mixto",
+      "name": "Bowl mixto carne pollo",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con carne y pollo.",
+      "price": 8500,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-camaron-pollo",
+      "name": "Bowl camarón pollo",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con camarón y pollo.",
+      "price": 9900,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-salmon",
+      "name": "Bowl salmón",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con salmón.",
+      "price": 9000,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bowl-huevo",
+      "name": "Bowl huevo duro",
+      "description": "Base de arroz, lechuga, pepino, zanahoria, tomate, repollo y choclo, con huevo duro.",
+      "price": 4400,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-surtida-grande",
+      "name": "Ensalada surtida grande",
+      "description": "Ensalada surtida grande.",
+      "price": 4900,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-surtida-mediana",
+      "name": "Ensalada surtida mediana",
+      "description": "Ensalada surtida mediana.",
+      "price": 4200,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-surtida-chica",
+      "name": "Ensalada surtida chica",
+      "description": "Ensalada surtida chica.",
+      "price": 3900,
+      "categoryId": "cat-bowls",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tomahawk-pobre",
+      "name": "Tomahawk a lo pobre",
+      "description": "Tomahawk a lo pobre.",
+      "price": 24100,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-entrana-pobre",
+      "name": "Entraña a lo pobre",
+      "description": "Entraña a lo pobre.",
+      "price": 18500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-entrana-papas",
+      "name": "Entraña con papas fritas",
+      "description": "Entraña con papas fritas.",
+      "price": 17200,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-entrana-arroz",
+      "name": "Entraña con arroz o puré",
+      "description": "Entraña con arroz o puré.",
+      "price": 16800,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-entrana-ensalada",
+      "name": "Entraña con ensalada",
+      "description": "Entraña con ensalada.",
+      "price": 16800,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-filete-pobre",
+      "name": "Filete a lo pobre",
+      "description": "Filete a lo pobre.",
+      "price": 17200,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-filete-papas",
+      "name": "Filete con papas fritas",
+      "description": "Filete con papas fritas.",
+      "price": 16500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-filete-arroz",
+      "name": "Filete con arroz o puré",
+      "description": "Filete con arroz o puré.",
+      "price": 15300,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-filete-ensalada",
+      "name": "Filete con ensalada",
+      "description": "Filete con ensalada.",
+      "price": 15300,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vetado-pobre",
+      "name": "Lomo vetado a lo pobre",
+      "description": "Lomo vetado a lo pobre.",
+      "price": 17100,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vetado-papas",
+      "name": "Lomo vetado con papas fritas",
+      "description": "Lomo vetado con papas fritas.",
+      "price": 16500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vetado-arroz",
+      "name": "Lomo vetado con arroz o puré",
+      "description": "Lomo vetado con arroz o puré.",
+      "price": 15200,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vetado-ensalada",
+      "name": "Lomo vetado con ensalada",
+      "description": "Lomo vetado con ensalada.",
+      "price": 15200,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-liso-pobre",
+      "name": "Lomo liso a lo pobre",
+      "description": "Lomo liso a lo pobre.",
+      "price": 15600,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-liso-papas",
+      "name": "Lomo liso con papas fritas",
+      "description": "Lomo liso con papas fritas.",
+      "price": 15000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-liso-arroz",
+      "name": "Lomo liso con arroz o puré",
+      "description": "Lomo liso con arroz o puré.",
+      "price": 14500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-liso-ensalada",
+      "name": "Lomo liso con ensalada",
+      "description": "Lomo liso con ensalada.",
+      "price": 14500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salmon-pobre",
+      "name": "Salmón a lo pobre",
+      "description": "Salmón a lo pobre.",
+      "price": 13500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salmon-papas",
+      "name": "Salmón con papas fritas",
+      "description": "Salmón con papas fritas.",
+      "price": 12700,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salmon-arroz",
+      "name": "Salmón con arroz o puré",
+      "description": "Salmón con arroz o puré.",
+      "price": 12000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salmon-ensalada",
+      "name": "Salmón con ensalada",
+      "description": "Salmón con ensalada.",
+      "price": 12000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bistec-pobre",
+      "name": "Bistec a lo pobre",
+      "description": "Bistec a lo pobre.",
+      "price": 10600,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bistec-papas",
+      "name": "Bistec con papas fritas",
+      "description": "Bistec con papas fritas.",
+      "price": 10000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bistec-ensaladas",
+      "name": "Bistec al plato con ensaladas",
+      "description": "Bistec al plato con ensaladas.",
+      "price": 10000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-pobre",
+      "name": "Ave a lo pobre",
+      "description": "Ave a lo pobre.",
+      "price": 9300,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-papas",
+      "name": "Ave al plato con papas fritas",
+      "description": "Ave al plato con papas fritas.",
+      "price": 9000,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-pure",
+      "name": "Ave al plato con puré o arroz",
+      "description": "Ave al plato con puré o arroz.",
+      "price": 8500,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-ensaladas",
+      "name": "Ave al plato con ensaladas",
+      "description": "Ave al plato con ensaladas.",
+      "price": 8700,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nino-1",
+      "name": "Menú niño opción 1",
+      "description": "Menores de 12 años, solo en almuerzo. Entrada (cama de lechuga, choclo, tomate y huevo), salmón a la plancha con arroz perla y pimentón rojo, y postre tutifruti.",
+      "price": 7600,
+      "categoryId": "cat-nino",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nino-2",
+      "name": "Menú niño opción 2",
+      "description": "Menores de 12 años, solo en almuerzo. Entrada (cama de lechuga, choclo, tomate y huevo), pechuga de pollo a la plancha con puré y lechuga, y postre tutifruti.",
+      "price": 7200,
+      "categoryId": "cat-nino",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-hamburguesa-triple",
+      "name": "Hamburguesa triple con 6 ingredientes a elección",
+      "description": "Hamburguesa triple con 6 ingredientes a elección.",
+      "price": 12200,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-lomo-italiano",
+      "name": "Lomo italiano",
+      "description": "Lomo entero de res, palta, tomate y mayo.",
+      "price": 10500,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-lomo-chileno",
+      "name": "Lomo chileno",
+      "description": "Lomo de res entero, cebolla cruda, huevo frito, tomate, mayo y palta.",
+      "price": 10500,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-lomo-argentino",
+      "name": "Lomo argentino",
+      "description": "Lomo de res entero, cebolla caramelizada, huevo frito y tocino.",
+      "price": 10500,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-churrasco-pobre",
+      "name": "Churrasco pobre",
+      "description": "Carne, cebolla, queso, huevo frito y papas fritas.",
+      "price": 8700,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-baquetinne",
+      "name": "Baquetinne New York",
+      "description": "Carne, pepinillos, cebolla, tocino y lechuga.",
+      "price": 7700,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-atun-integral",
+      "name": "Atún integral",
+      "description": "Atún en conserva, palmitos, queso chacra, maíz y champiñones.",
+      "price": 6900,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-atun-mediterraneo",
+      "name": "Atún mediterráneo",
+      "description": "Atún en conserva, tomate, pimientos rojos, lechuga y espárragos.",
+      "price": 7200,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-sandwich-campesino",
+      "name": "Sandwichs campesino",
+      "description": "Carne, cebolla, tomate, lechuga y queso.",
+      "price": 7500,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-hamburguesa-cedrus",
+      "name": "Hamburguesa Cedrus",
+      "description": "Lechuga, tocino, tomate, cebolla, queso y mayonesa.",
+      "price": 8900,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-chacarero",
+      "name": "Chacarero",
+      "description": "Carne, porotos verdes, tomate y ají verde.",
+      "price": 7200,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-churrasco-italiano",
+      "name": "Churrasco italiano",
+      "description": "Carne, palta, tomate y mayonesa.",
+      "price": 7100,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-barrosluco",
+      "name": "Barrosluco",
+      "description": "Carne y queso.",
+      "price": 6600,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-chacarera",
+      "name": "Ave chacarera",
+      "description": "Ave, porotos verdes, tomate y ají verde.",
+      "price": 6500,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-churrasco-solo",
+      "name": "Churrasco solo",
+      "description": "Churrasco solo.",
+      "price": 5800,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-morron",
+      "name": "Ave morrón",
+      "description": "Ave, morrón y mayonesa.",
+      "price": 5990,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-italiana",
+      "name": "Ave italiana",
+      "description": "Ave, palta, tomate y mayonesa.",
+      "price": 6700,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-palta",
+      "name": "Ave palta",
+      "description": "Ave, palta y mayonesa.",
+      "price": 6200,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ave-luco",
+      "name": "Ave luco",
+      "description": "Ave y queso.",
+      "price": 5900,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-barros-jarpa",
+      "name": "Barros Jarpa",
+      "description": "Jamón y queso.",
+      "price": 5600,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-queso-caliente",
+      "name": "Queso caliente",
+      "description": "Queso caliente.",
+      "price": 4900,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-sandwich-vegetariano",
+      "name": "Sandwich vegetariano",
+      "description": "Lechuga, palta, cebolla, choclo, champiñones y tomate.",
+      "price": 6200,
+      "categoryId": "cat-sandwichs",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-az-carne",
+      "name": "AZ de carne",
+      "description": "Carne, tomate, palta y mayonesa.",
+      "price": 5100,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-az-pollo",
+      "name": "AZ de pollo",
+      "description": "Ave, tomate, palta y mayonesa.",
+      "price": 4500,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-completo-completo",
+      "name": "Completo completo",
+      "description": "Vienesa, palta, tomate, chucrut, pepinillo y mayonesa.",
+      "price": 4000,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-completo-italiano",
+      "name": "Completo italiano",
+      "description": "Vienesa, palta, tomate y mayo.",
+      "price": 3800,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-completo-chucrut",
+      "name": "Completo chucrut",
+      "description": "Vienesa, chucrut, tomate, pepinillo y mayonesa.",
+      "price": 3500,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vienesa-sola",
+      "name": "Vienesa sola",
+      "description": "Vienesa sola.",
+      "price": 2900,
+      "categoryId": "cat-completos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-fajitas-camaron",
+      "name": "Fajitas de camarón",
+      "description": "Camarón salteado a la mantequilla, morrón, cebolla, palta, cilantro y lechuga.",
+      "price": 10000,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-fajitas-carne",
+      "name": "Fajitas de carne",
+      "description": "Carne, cebolla, choclo, lechuga, palta y tomate.",
+      "price": 8900,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-fajitas-mixtas",
+      "name": "Fajitas mixtas",
+      "description": "Carne, ave, cebolla, choclo, lechuga, palta y tomate.",
+      "price": 8800,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-fajitas-pollo",
+      "name": "Fajitas de pollo",
+      "description": "Ave, cebolla, choclo, lechuga, palta y tomate.",
+      "price": 8000,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-fajitas-veg",
+      "name": "Fajitas vegetarianas",
+      "description": "Champiñones, lechuga, tomate, choclo, palta, cebolla y morrón.",
+      "price": 7100,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-arroz",
+      "name": "Porción de arroz o puré",
+      "description": "Porción de arroz o puré.",
+      "price": 3200,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-queso",
+      "name": "Queso",
+      "description": "Agregado de queso.",
+      "price": 1400,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-porotos",
+      "name": "Porotos verdes",
+      "description": "Agregado de porotos verdes.",
+      "price": 1600,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-champinones",
+      "name": "Champiñones",
+      "description": "Agregado de champiñones.",
+      "price": 1500,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-palta",
+      "name": "Palta",
+      "description": "Agregado de palta.",
+      "price": 1600,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-tomate",
+      "name": "Tomate",
+      "description": "Agregado de tomate.",
+      "price": 1200,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-tocino",
+      "name": "Tocino",
+      "description": "Agregado de tocino.",
+      "price": 1500,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-choclo",
+      "name": "Choclo",
+      "description": "Agregado de choclo.",
+      "price": 1400,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-mayo",
+      "name": "Mayonesa",
+      "description": "Agregado de mayonesa.",
+      "price": 1000,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-pepinillo",
+      "name": "Pepinillo",
+      "description": "Agregado de pepinillo.",
+      "price": 1000,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-chucrut",
+      "name": "Chucrut",
+      "description": "Agregado de chucrut.",
+      "price": 1000,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-lechuga",
+      "name": "Lechuga",
+      "description": "Agregado de lechuga.",
+      "price": 1300,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-aji",
+      "name": "Ají verde",
+      "description": "Agregado de ají verde.",
+      "price": 800,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-huevo-frito",
+      "name": "Huevo frito",
+      "description": "Agregado de huevo frito.",
+      "price": 1000,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-cebolla-frita",
+      "name": "Cebolla frita",
+      "description": "Agregado de cebolla frita.",
+      "price": 1200,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-aceituna",
+      "name": "Aceituna",
+      "description": "Agregado de aceituna.",
+      "price": 1200,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-ciboulette",
+      "name": "Ciboulette",
+      "description": "Agregado de ciboulette.",
+      "price": 900,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-palmitos",
+      "name": "Palmitos",
+      "description": "Agregado de palmitos.",
+      "price": 1400,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-huevos-duros",
+      "name": "Huevos duros (2)",
+      "description": "Agregado de 2 huevos duros.",
+      "price": 1300,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-morron",
+      "name": "Morrón",
+      "description": "Agregado de morrón.",
+      "price": 1000,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agr-michelada",
+      "name": "Michelada (agregado)",
+      "description": "Agregado de $700 al precio del schop.",
+      "price": 700,
+      "categoryId": "cat-agregados",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-mar-tierra",
+      "name": "Tabla mar y tierra",
+      "description": "Carne, tocino, salmón, camarones salteados a la mantequilla, anillos de calamar apanados, cebolla, queso mantecoso, palmitos y papas fritas.",
+      "price": 32500,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-tres-carnes",
+      "name": "Tabla tres carnes",
+      "description": "Carne de res, camarones, pollo, champiñones, morrón, cebolla, palmitos, queso mantecoso y papas fritas.",
+      "price": 31000,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-pollo-carne-grande",
+      "name": "Tabla de pollo carne grande con papas",
+      "description": "Ave, carne, vienesa, cebolla, aceitunas, palta, tomate, palmitos, papas fritas y queso.",
+      "price": 27200,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-pollo-carne-chica-papas",
+      "name": "Tabla de pollo carne chica con papas",
+      "description": "Ave, carne, vienesa, cebolla, aceitunas, palta, tomate, palmitos, papas fritas y queso.",
+      "price": 19500,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-pollo-carne-chica",
+      "name": "Tabla de pollo carne chica sin papas",
+      "description": "Ave, carne, vienesa, cebolla, aceitunas, palta, tomate, palmitos y queso, sin papas fritas.",
+      "price": 16000,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-cedrus",
+      "name": "Tabla Cedrus",
+      "description": "Salteado de ave, queso, cebolla, choclo, crema, champiñón y papas fritas.",
+      "price": 19200,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tabla-cedrus-camarones",
+      "name": "Tabla Cedrus con camarones",
+      "description": "Salteado de ave, camarones, queso, cebolla, choclo, crema, champiñón y papas fritas.",
+      "price": 25200,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-grande-carne-ave",
+      "name": "Papas fritas grande con carne y ave",
+      "description": "Papas fritas grandes con carne y ave.",
+      "price": 13800,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-grande-ave-vienesa",
+      "name": "Papas fritas grandes con ave y vienesas",
+      "description": "Papas fritas grandes con ave y vienesas.",
+      "price": 12200,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-chica-carne",
+      "name": "Papas fritas chicas con carne",
+      "description": "Papas fritas chicas con carne.",
+      "price": 10100,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-chica-pollo",
+      "name": "Papas fritas chicas con pollo",
+      "description": "Papas fritas chicas con pollo.",
+      "price": 9100,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salchipapas-grandes",
+      "name": "Salchipapas grandes",
+      "description": "Salchipapas grandes.",
+      "price": 8900,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-salchipapas-chicas",
+      "name": "Salchipapas chicas",
+      "description": "Salchipapas chicas.",
+      "price": 6500,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-grandes",
+      "name": "Papas fritas grandes",
+      "description": "Papas fritas grandes.",
+      "price": 7000,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-papas-chicas",
+      "name": "Papas fritas chicas",
+      "description": "Papas fritas chicas.",
+      "price": 5200,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-cuatro-carnes",
+      "name": "Pizza cuatro carnes",
+      "description": "Base de salsa de tomates, jamón, salteado de ave, carne, salmón, tomates, queso, aceitunas y orégano.",
+      "price": 24500,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-camaron",
+      "name": "Pizza camarón",
+      "description": "Base de salsa de tomates, queso mantecoso, camarones salteados, tomates, morrón, aceitunas y albahaca según temporada.",
+      "price": 24500,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-salmon",
+      "name": "Pizza salmón",
+      "description": "Base de salsa de tomates, queso, filetes de salmón y alcaparras.",
+      "price": 23200,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-carne",
+      "name": "Pizza de carne",
+      "description": "Base de salsa de tomates, carne, queso, tomate, choclo, aceitunas, champiñones, palmitos y orégano.",
+      "price": 22000,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-cedrus",
+      "name": "Pizza Cedrus",
+      "description": "Base de salsa de tomates, 1/2 carne, 1/2 ave, queso, choclo, champiñones, morrón, tomate, aceitunas, palmitos y orégano.",
+      "price": 21100,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-ave",
+      "name": "Pizza de ave",
+      "description": "Base de salsa de tomates, ave, queso, tomate, choclo, aceitunas, champiñones, palmitos y orégano.",
+      "price": 18500,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-napolitana",
+      "name": "Pizza napolitana",
+      "description": "Base de salsa de tomates, queso, jamón, tomates, morrón, aceitunas y orégano.",
+      "price": 16500,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pizza-vegetariana",
+      "name": "Pizza vegetariana",
+      "description": "Base de salsa de tomates, choclo, cebolla, queso, champiñones, palmitos, tomate, morrón y orégano.",
+      "price": 15500,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-amor",
+      "name": "Torta amor",
+      "description": "Porción de torta amor. Según disponibilidad del día.",
+      "price": 5600,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-milhojas",
+      "name": "Torta mil hojas",
+      "description": "Porción de torta mil hojas. Según disponibilidad del día.",
+      "price": 5600,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-manjar-platano",
+      "name": "Torta manjar plátano",
+      "description": "Porción de torta manjar plátano. Según disponibilidad del día.",
+      "price": 5200,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-manjar-nuez",
+      "name": "Torta manjar nuez",
+      "description": "Porción de torta manjar nuez. Según disponibilidad del día.",
+      "price": 5200,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-selva-negra",
+      "name": "Torta selva negra",
+      "description": "Porción de torta selva negra. Según disponibilidad del día.",
+      "price": 5200,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-beso-angel",
+      "name": "Torta beso de ángel",
+      "description": "Porción de torta beso de ángel. Según disponibilidad del día.",
+      "price": 5300,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-torta-panqueque-naranja",
+      "name": "Torta panqueque naranja",
+      "description": "Porción de torta panqueque naranja. Según disponibilidad del día.",
+      "price": 5200,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cheesecake-maracuya",
+      "name": "Cheesecake de maracuyá",
+      "description": "Porción de cheesecake de maracuyá. Según disponibilidad del día.",
+      "price": 4000,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-kuchen-sabores",
+      "name": "Kuchen de sabores",
+      "description": "Porción de kuchen de sabores. Según disponibilidad del día.",
+      "price": 5000,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-kuchen-sureno",
+      "name": "Kuchen sureño",
+      "description": "Porción de kuchen sureño. Según disponibilidad del día.",
+      "price": 5000,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-panqueques-helado",
+      "name": "Panqueques con helado",
+      "description": "Panqueques con helado.",
+      "price": 6400,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-panqueques-manjar",
+      "name": "Panqueques con manjar",
+      "description": "Panqueques con manjar.",
+      "price": 4000,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-porcion-galletas",
+      "name": "Porción de galletas",
+      "description": "Porción de galletas.",
+      "price": 3500,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-copa-silvestre",
+      "name": "Copa silvestre",
+      "description": "Helado de vainilla, frutilla, crema chantilly y salsa de chocolate.",
+      "price": 5100,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-copa-primavera",
+      "name": "Copa primavera",
+      "description": "Trocitos de durazno, helado de vainilla, helado de chocolate, crema chantilly y salsa de frambuesa.",
+      "price": 5700,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-copa-tropical",
+      "name": "Copa tropical",
+      "description": "Macedonía, helado de chirimoya, vainilla y crema chantilly.",
+      "price": 5500,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-amor-de-dos",
+      "name": "Amor de dos",
+      "description": "Trocitos de duraznos, helado de vainilla, pasas al ron, mermelada de frutilla y crema chantilly.",
+      "price": 5500,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-copa-verano",
+      "name": "Copa de verano",
+      "description": "Trocitos de piña, helado de mora, crema y crema chantilly. Salsa de chocolate.",
+      "price": 5400,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-banana-split",
+      "name": "Banana split",
+      "description": "Banana split.",
+      "price": 5900,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-cafe-helado",
+      "name": "Café helado",
+      "description": "Café helado.",
+      "price": 5900,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-milk-shake",
+      "name": "Milk shake",
+      "description": "Milk shake.",
+      "price": 6000,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vaso-simple",
+      "name": "Vaso simple",
+      "description": "Helado vaso simple.",
+      "price": 3400,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vaso-doble",
+      "name": "Vaso doble",
+      "description": "Helado vaso doble.",
+      "price": 4000,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-leche-platano",
+      "name": "Leche con plátano",
+      "description": "Leche con plátano.",
+      "price": 3300,
+      "categoryId": "cat-heladeria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-jugos-naturales",
+      "name": "Jugos naturales sabores",
+      "description": "Jugos naturales de sabores.",
+      "price": 4400,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-jugo-frambuesa",
+      "name": "Jugo natural frambuesa",
+      "description": "Jugo natural de frambuesa.",
+      "price": 4700,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-bebidas",
+      "name": "Bebidas",
+      "description": "Bebida.",
+      "price": 2100,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agua-minera",
+      "name": "Agua minera",
+      "description": "Agua minera.",
+      "price": 2100,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-agua-perrier",
+      "name": "Agua mineral Perrier",
+      "description": "Agua mineral Perrier.",
+      "price": 2300,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-jugos-watts",
+      "name": "Jugos Watts",
+      "description": "Jugo Watts.",
+      "price": 1700,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-limonada-tradicional",
+      "name": "Limonada tradicional",
+      "description": "Limonada tradicional.",
+      "price": 3100,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-limonada-menta",
+      "name": "Limonada menta jengibre",
+      "description": "Limonada de menta y jengibre.",
+      "price": 3400,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-limonada-sabores",
+      "name": "Limonada sabores",
+      "description": "Limonada de sabores.",
+      "price": 4300,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-smoothie",
+      "name": "Smoothie",
+      "description": "Smoothie.",
+      "price": 4000,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-heineken-cero",
+      "name": "Heineken Cero",
+      "description": "Cerveza Heineken Cero.",
+      "price": 3500,
+      "categoryId": "cat-cervezas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-corona",
+      "name": "Corona",
+      "description": "Cerveza Corona.",
+      "price": 3500,
+      "categoryId": "cat-cervezas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-torobayo-500",
+      "name": "Schop Torobayo 500 cc",
+      "description": "Schop Torobayo 500 cc.",
+      "price": 4900,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-torobayo-350",
+      "name": "Schop Torobayo 350 cc",
+      "description": "Schop Torobayo 350 cc.",
+      "price": 4400,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-austral-500",
+      "name": "Schop Austral Calafate 500 cc",
+      "description": "Schop Austral Calafate 500 cc.",
+      "price": 5000,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-austral-350",
+      "name": "Schop Austral Calafate 350 cc",
+      "description": "Schop Austral Calafate 350 cc.",
+      "price": 4500,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-heineken-500",
+      "name": "Schop Heineken 500 cc",
+      "description": "Schop Heineken 500 cc.",
+      "price": 4300,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-heineken-350",
+      "name": "Schop Heineken 350 cc",
+      "description": "Schop Heineken 350 cc.",
+      "price": 4100,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-royal-500",
+      "name": "Schop Royal 500 cc",
+      "description": "Schop Royal 500 cc.",
+      "price": 4000,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-royal-350",
+      "name": "Schop Royal 350 cc",
+      "description": "Schop Royal 350 cc.",
+      "price": 3800,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-cristal-500",
+      "name": "Schop Cristal 500 cc",
+      "description": "Schop Cristal 500 cc.",
+      "price": 3500,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-schop-cristal-350",
+      "name": "Schop Cristal 350 cc",
+      "description": "Schop Cristal 350 cc.",
+      "price": 3000,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-aperol",
+      "name": "Aperol",
+      "description": "Aperol, espumante, agua mineral y fruta de estación.",
+      "price": 6800,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-clavo-oxidado",
+      "name": "Clavo oxidado",
+      "description": "Whisky, Drambuie y clavo de olor.",
+      "price": 7900,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-baileys",
+      "name": "Baileys",
+      "description": "Baileys, hielo frappé.",
+      "price": 7200,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-caipirinha",
+      "name": "Caipirinha",
+      "description": "Cachaça, limón de pica y azúcar.",
+      "price": 6500,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-blue-hawaiian",
+      "name": "Blue Hawaiian",
+      "description": "Ron blanco, jugo de piña, curaçao, azúcar y crema de leche.",
+      "price": 6300,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pantera-rosa",
+      "name": "Pantera rosa",
+      "description": "Ron blanco, jugo de piña, crema de coco y granadina.",
+      "price": 6900,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ramazzotti",
+      "name": "Ramazzotti",
+      "description": "Espumante, Ramazzotti rosato y agua mineral.",
+      "price": 7200,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ramazzotti-violetto",
+      "name": "Ramazzotti violetto",
+      "description": "Espumante, Ramazzotti violetto y agua mineral.",
+      "price": 7500,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tequila-margarita",
+      "name": "Tequila margarita",
+      "description": "Jugo de limón, tequila y borde de sal.",
+      "price": 6800,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tequila-sunrise",
+      "name": "Tequila sunrise",
+      "description": "Tequila, jugo de naranja y granadina.",
+      "price": 6300,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-primavera",
+      "name": "Primavera",
+      "description": "Base de cóctel de fruta, tequila, jugo de naranja y granadina.",
+      "price": 6200,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vodka-naranja",
+      "name": "Vodka naranja",
+      "description": "Vodka y jugo de naranja.",
+      "price": 5800,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-laguna-azul",
+      "name": "Laguna azul",
+      "description": "Limón, azúcar, vodka, curaçao y agua mineral.",
+      "price": 5800,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-vaina",
+      "name": "Vaina",
+      "description": "Vino añejado, licor de cacao, coñac añejo y yema de huevo.",
+      "price": 4900,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-martini",
+      "name": "Martini",
+      "description": "Gin y Vermouth bianco.",
+      "price": 4500,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-coladas",
+      "name": "Coladas",
+      "description": "Ron blanco, leche condensada, crema de coco y sabor a elección.",
+      "price": 7200,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-orgasmo",
+      "name": "Orgasmo",
+      "description": "Baileys, Amaretto y licor de café.",
+      "price": 7600,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-sangria",
+      "name": "Sangría",
+      "description": "Base de fruta picada, azúcar, jugo de naranja y sangría. Canela opcional.",
+      "price": 4500,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ruso-negro",
+      "name": "Ruso negro",
+      "description": "Vodka y licor de café.",
+      "price": 5400,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ruso-blanco",
+      "name": "Ruso blanco",
+      "description": "Vodka, licor de café y crema de leche.",
+      "price": 5800,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-daikiri-sabores",
+      "name": "Daikiri sabores",
+      "description": "Ron blanco, jugo de limón, azúcar y sabor a elección.",
+      "price": 6700,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-expresso-martini",
+      "name": "Expresso martini",
+      "description": "Shot de espresso, vodka y licor de café.",
+      "price": 6900,
+      "categoryId": "cat-tragos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-pisco-sour",
+      "name": "Pisco sour",
+      "description": "Jugo de limón, azúcar y pisco.",
+      "price": 4500,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-sour-sabores",
+      "name": "Sour sabores",
+      "description": "Jugo de limón, azúcar, pisco y sabor a elección.",
+      "price": 5500,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-amaretto-sour",
+      "name": "Amaretto sour",
+      "description": "Jugo de limón, azúcar y Amaretto.",
+      "price": 4200,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-whisky-sour",
+      "name": "Whisky sour",
+      "description": "Jugo de limón, azúcar y whisky.",
+      "price": 4500,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-sour-cherry",
+      "name": "Sour cherry",
+      "description": "Jugo de limón, azúcar y whisky.",
+      "price": 4900,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-gin-tonic",
+      "name": "Gin tonic",
+      "description": "Gin y tónica a elección (tradicional o pink).",
+      "price": 7200,
+      "categoryId": "cat-gin",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-gin-bebida",
+      "name": "Gin con bebida",
+      "description": "Gin y bebida a elección.",
+      "price": 6500,
+      "categoryId": "cat-gin",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tropical-gin",
+      "name": "Tropical gin",
+      "description": "Gin, pulpa de maracuyá y Red Bull Tropical.",
+      "price": 7500,
+      "categoryId": "cat-gin",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-summer-gin",
+      "name": "Summer gin",
+      "description": "Gin, pulpa de frambuesa y Red Bull Sandía.",
+      "price": 7500,
+      "categoryId": "cat-gin",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-tom-collins",
+      "name": "Tom Collins",
+      "description": "Jugo de limón, azúcar, gin, mineral o bebida a elección.",
+      "price": 5900,
+      "categoryId": "cat-gin",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-tradicional",
+      "name": "Mojito tradicional",
+      "description": "Base de limón con azúcar, menta, ron blanco y agua mineral.",
+      "price": 6800,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-sabores",
+      "name": "Mojito sabores",
+      "description": "Base de limón con azúcar, menta, ron blanco, agua mineral y sabor a elección.",
+      "price": 7500,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-blue",
+      "name": "Mojito blue",
+      "description": "Base de limón con azúcar, menta, ron blanco, curaçao y agua mineral.",
+      "price": 6800,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-ramazzotti",
+      "name": "Mojito Ramazzotti",
+      "description": "Base de limón con azúcar, menta, ron blanco y Ramazzotti.",
+      "price": 7200,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-corona",
+      "name": "Mojito Corona",
+      "description": "Base de limón con azúcar, menta, ron blanco y botellín Corona.",
+      "price": 8700,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-corona-sabores",
+      "name": "Mojito Corona sabores",
+      "description": "Base de limón con azúcar, menta, ron blanco, botellín Corona y sabor a elección.",
+      "price": 9200,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-jager",
+      "name": "Mojito Jäger",
+      "description": "Base de limón con azúcar, menta y Jägermeister.",
+      "price": 7500,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mojito-jager-sabores",
+      "name": "Mojito Jäger sabores",
+      "description": "Base de limón con azúcar, menta, Jägermeister y sabor a elección.",
+      "price": 8200,
+      "categoryId": "cat-mojitos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mistral-cb",
+      "name": "Mistral C/B",
+      "description": "Mistral con bebida.",
+      "price": 5200,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mistral-solo",
+      "name": "Mistral solo",
+      "description": "Mistral solo.",
+      "price": 4200,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-mistral-nobel-apple",
+      "name": "Mistral Nobel Apple",
+      "description": "Mistral Nobel Apple.",
+      "price": 6900,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-alto-cb",
+      "name": "Alto del Carmen C/B",
+      "description": "Alto del Carmen con bebida.",
+      "price": 5100,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-alto-solo",
+      "name": "Alto del Carmen solo",
+      "description": "Alto del Carmen solo.",
+      "price": 4200,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nobel-cb",
+      "name": "Nobel C/B",
+      "description": "Nobel con bebida.",
+      "price": 5800,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-nobel-solo",
+      "name": "Nobel solo",
+      "description": "Nobel solo.",
+      "price": 4900,
+      "categoryId": "cat-pisco",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-chivas-cb",
+      "name": "Chivas C/B",
+      "description": "Chivas con bebida.",
+      "price": 7900,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-chivas-rocas",
+      "name": "Chivas a las rocas",
+      "description": "Chivas a las rocas.",
+      "price": 7200,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-jack-cb",
+      "name": "Jack Daniels C/B",
+      "description": "Jack Daniels con bebida.",
+      "price": 7900,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-jack-solo",
+      "name": "Jack Daniels",
+      "description": "Jack Daniels.",
+      "price": 6800,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-johnnie-negra-cb",
+      "name": "Johnnie Etiqueta Negra C/B",
+      "description": "Johnnie Walker Etiqueta Negra con bebida.",
+      "price": 7900,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-johnnie-negra-rocas",
+      "name": "Johnnie Etiqueta Negra a las rocas",
+      "description": "Johnnie Walker Etiqueta Negra a las rocas.",
+      "price": 6900,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-johnnie-cb",
+      "name": "Johnnie Walker C/B",
+      "description": "Johnnie Walker con bebida.",
+      "price": 6900,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-johnnie-rocas",
+      "name": "Johnnie Walker a las rocas",
+      "description": "Johnnie Walker a las rocas.",
+      "price": 6300,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ballantines-cb",
+      "name": "Ballantines C/B",
+      "description": "Ballantines con bebida.",
+      "price": 6300,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-ballantines-rocas",
+      "name": "Ballantines a las rocas",
+      "description": "Ballantines a las rocas.",
+      "price": 5300,
+      "categoryId": "cat-whisky",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-absolut-cb",
+      "name": "Absolut Blue C/B",
+      "description": "Absolut Blue con bebida.",
+      "price": 7500,
+      "categoryId": "cat-vodka",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-absolut-solo",
+      "name": "Absolut Blue solo",
+      "description": "Absolut Blue solo.",
+      "price": 6500,
+      "categoryId": "cat-vodka",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-stoli-cb",
+      "name": "Stolichnaya C/B",
+      "description": "Stolichnaya con bebida.",
+      "price": 6200,
+      "categoryId": "cat-vodka",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-stoli-solo",
+      "name": "Stolichnaya",
+      "description": "Stolichnaya.",
+      "price": 5200,
+      "categoryId": "cat-vodka",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekday"
+      ]
+    },
+    {
+      "id": "prod-dom-tabla-mar-tierra",
+      "name": "Mar y Tierra",
+      "description": "Tabla mar y tierra. Domingos en Cedrus.",
+      "price": 34900,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tabla-pollo-carne-chica",
+      "name": "Pollo carne chica",
+      "description": "Tabla pollo carne chica. Domingos en Cedrus.",
+      "price": 23400,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tabla-pollo-carne-grande",
+      "name": "Pollo carne grande",
+      "description": "Tabla pollo carne grande. Domingos en Cedrus.",
+      "price": 29900,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tabla-cedrus",
+      "name": "Tabla Cedrus",
+      "description": "Tabla Cedrus. Domingos en Cedrus.",
+      "price": 22900,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tabla-cedrus-camarones",
+      "name": "Tabla Cedrus con camarones",
+      "description": "Tabla Cedrus con camarones. Domingos en Cedrus.",
+      "price": 26900,
+      "categoryId": "cat-tablas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-papas-carne-pollo-grande",
+      "name": "Papas fritas carne pollo grande",
+      "description": "Papas fritas grande con carne y pollo. Domingos en Cedrus.",
+      "price": 15500,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-papas-pollo-vienesa-grande",
+      "name": "Papas fritas pollo vienesa grande",
+      "description": "Papas fritas grande con pollo y vienesa. Domingos en Cedrus.",
+      "price": 13900,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-salchipapas-grande",
+      "name": "Salchipapas grande",
+      "description": "Salchipapas grande. Domingos en Cedrus.",
+      "price": 9900,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-salchipapas-chica",
+      "name": "Salchipapas chica",
+      "description": "Salchipapas chica. Domingos en Cedrus.",
+      "price": 6900,
+      "categoryId": "cat-papas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-fajitas-camaron",
+      "name": "Fajitas de camarón",
+      "description": "Fajitas de camarón. Domingos en Cedrus.",
+      "price": 10900,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-fajitas-mixta",
+      "name": "Fajitas mixta",
+      "description": "Fajitas mixta. Domingos en Cedrus.",
+      "price": 9900,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-fajitas-vegetariana",
+      "name": "Fajitas vegetariana",
+      "description": "Fajitas vegetariana. Domingos en Cedrus.",
+      "price": 7900,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-fajitas-pollo",
+      "name": "Fajitas de pollo",
+      "description": "Fajitas de pollo. Domingos en Cedrus.",
+      "price": 8900,
+      "categoryId": "cat-fajitas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-pizza-4-carnes",
+      "name": "Pizza 4 carnes",
+      "description": "Pizza 4 carnes. Domingos en Cedrus.",
+      "price": 26900,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-pizza-cedrus",
+      "name": "Pizza Cedrus",
+      "description": "Pizza Cedrus. Domingos en Cedrus.",
+      "price": 23900,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-pizza-camaron",
+      "name": "Pizza camarón",
+      "description": "Pizza camarón. Domingos en Cedrus.",
+      "price": 25900,
+      "categoryId": "cat-pizzas",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tomahawk-pobre",
+      "name": "Tomahawk a lo pobre",
+      "description": "Tomahawk a lo pobre. Domingos en Cedrus.",
+      "price": 25900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": true,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-entrana-pobre",
+      "name": "Entraña a lo pobre",
+      "description": "Entraña a lo pobre. Domingos en Cedrus.",
+      "price": 23700,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-filete-pobre",
+      "name": "Filete a lo pobre",
+      "description": "Filete a lo pobre. Domingos en Cedrus.",
+      "price": 21900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-filete-arroz",
+      "name": "Filete con arroz o puré",
+      "description": "Filete con arroz o puré. Domingos en Cedrus.",
+      "price": 18900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-vetado-pobre",
+      "name": "Lomo vetado a lo pobre",
+      "description": "Lomo vetado a lo pobre. Domingos en Cedrus.",
+      "price": 19900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-lomo-pure",
+      "name": "Lomo con puré o arroz",
+      "description": "Lomo con puré o arroz. Domingos en Cedrus.",
+      "price": 17900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-salmon-pobre",
+      "name": "Salmón a lo pobre",
+      "description": "Salmón a lo pobre. Domingos en Cedrus.",
+      "price": 14900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-salmon-pure",
+      "name": "Salmón con puré o arroz",
+      "description": "Salmón con puré o arroz. Domingos en Cedrus.",
+      "price": 12900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-bistec-pobre",
+      "name": "Bistec a lo pobre",
+      "description": "Bistec a lo pobre. Domingos en Cedrus.",
+      "price": 11900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-bistec-guarnicion",
+      "name": "Bistec con puré, arroz o ensalada",
+      "description": "Bistec con puré, arroz o ensalada. Domingos en Cedrus.",
+      "price": 10900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-ave-pobre",
+      "name": "Ave a lo pobre",
+      "description": "Ave a lo pobre. Domingos en Cedrus.",
+      "price": 9900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-ave-guarnicion",
+      "name": "Ave con puré, arroz o ensalada",
+      "description": "Ave con puré, arroz o ensalada. Domingos en Cedrus.",
+      "price": 8900,
+      "categoryId": "cat-platos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-nino-ave",
+      "name": "Menú niño ave con puré o arroz",
+      "description": "Menú de niño: ave con puré o arroz. Domingos en Cedrus.",
+      "price": 7000,
+      "categoryId": "cat-nino",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-nino-salmon",
+      "name": "Menú niño salmón con puré o arroz",
+      "description": "Menú de niño: salmón con puré o arroz. Domingos en Cedrus.",
+      "price": 7800,
+      "categoryId": "cat-nino",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-panqueques-helado",
+      "name": "Panqueques con helado",
+      "description": "Panqueques con helado. Domingos en Cedrus.",
+      "price": 6300,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-postre-dia",
+      "name": "Postre del día",
+      "description": "Postre del día. Domingos en Cedrus.",
+      "price": 4000,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-tortas",
+      "name": "Tortas",
+      "description": "Porción de torta. Domingos en Cedrus.",
+      "price": 5500,
+      "categoryId": "cat-pasteleria",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-bebidas",
+      "name": "Bebidas",
+      "description": "Bebida. Domingos en Cedrus.",
+      "price": 2390,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-jugo-natural",
+      "name": "Jugo natural",
+      "description": "Jugo natural. Domingos en Cedrus.",
+      "price": 5200,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-jugo-watts",
+      "name": "Jugo Watts",
+      "description": "Jugo Watts. Domingos en Cedrus.",
+      "price": 1900,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-limonada-tradicional",
+      "name": "Limonada tradicional",
+      "description": "Limonada tradicional. Domingos en Cedrus.",
+      "price": 3200,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-limonada-menta",
+      "name": "Limonada menta jengibre",
+      "description": "Limonada menta jengibre. Domingos en Cedrus.",
+      "price": 3600,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-limonada-sabores",
+      "name": "Limonada sabores",
+      "description": "Limonada de sabores. Domingos en Cedrus.",
+      "price": 4500,
+      "categoryId": "cat-bebidas-jugos",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-sour-tradicional",
+      "name": "Sour tradicional",
+      "description": "Sour tradicional. Domingos en Cedrus.",
+      "price": 4900,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-sour-maqui",
+      "name": "Sour maqui",
+      "description": "Sour maqui. Domingos en Cedrus.",
+      "price": 6400,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-sour-sabores",
+      "name": "Sour sabores",
+      "description": "Sour sabores. Domingos en Cedrus.",
+      "price": 6400,
+      "categoryId": "cat-sour",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-torobayo-350",
+      "name": "Schop Torobayo 350 ml",
+      "description": "Schop Torobayo 350 ml. Domingos en Cedrus.",
+      "price": 5000,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-torobayo-500",
+      "name": "Schop Torobayo 500 ml",
+      "description": "Schop Torobayo 500 ml. Domingos en Cedrus.",
+      "price": 5500,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-austral-350",
+      "name": "Schop Austral Calafate 350 ml",
+      "description": "Schop Austral Calafate 350 ml. Domingos en Cedrus.",
+      "price": 5000,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-austral-500",
+      "name": "Schop Austral Calafate 500 ml",
+      "description": "Schop Austral Calafate 500 ml. Domingos en Cedrus.",
+      "price": 5500,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-heineken-350",
+      "name": "Schop Heineken 350 ml",
+      "description": "Schop Heineken 350 ml. Domingos en Cedrus.",
+      "price": 4300,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-heineken-500",
+      "name": "Schop Heineken 500 ml",
+      "description": "Schop Heineken 500 ml. Domingos en Cedrus.",
+      "price": 4800,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-royal-350",
+      "name": "Schop Royal 350 ml",
+      "description": "Schop Royal 350 ml. Domingos en Cedrus.",
+      "price": 4200,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-royal-500",
+      "name": "Schop Royal 500 ml",
+      "description": "Schop Royal 500 ml. Domingos en Cedrus.",
+      "price": 4600,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-cristal-350",
+      "name": "Schop Cristal 350 ml",
+      "description": "Schop Cristal 350 ml. Domingos en Cedrus.",
+      "price": 3600,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    },
+    {
+      "id": "prod-dom-schop-cristal-500",
+      "name": "Schop Cristal 500 ml",
+      "description": "Schop Cristal 500 ml. Domingos en Cedrus.",
+      "price": 4200,
+      "categoryId": "cat-schop",
+      "imageUrl": "",
+      "available": true,
+      "featured": false,
+      "menus": [
+        "weekend"
+      ]
+    }
+  ]
+}
