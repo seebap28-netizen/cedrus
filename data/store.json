@@ -795,9 +795,9 @@
       "description": "Entraña a lo pobre.",
       "price": 18500,
       "categoryId": "cat-platos",
-      "imageUrl": "",
+      "imageUrl": "/platos/entrana-a-lo-pobre.jpg",
       "available": true,
-      "featured": false,
+      "featured": true,
       "menus": [
         "weekday"
       ]
@@ -847,9 +847,9 @@
       "description": "Filete a lo pobre.",
       "price": 17200,
       "categoryId": "cat-platos",
-      "imageUrl": "/platos/filete-a-lo-pobre.jpg",
+      "imageUrl": "",
       "available": true,
-      "featured": true,
+      "featured": false,
       "menus": [
         "weekday"
       ]
@@ -3785,7 +3785,7 @@
       "description": "Entraña a lo pobre. Domingos en Cedrus.",
       "price": 23700,
       "categoryId": "cat-platos",
-      "imageUrl": "",
+      "imageUrl": "/platos/entrana-a-lo-pobre.jpg",
       "available": true,
       "featured": false,
       "menus": [
@@ -3798,7 +3798,7 @@
       "description": "Filete a lo pobre. Domingos en Cedrus.",
       "price": 21900,
       "categoryId": "cat-platos",
-      "imageUrl": "/platos/filete-a-lo-pobre.jpg",
+      "imageUrl": "",
       "available": true,
       "featured": false,
       "menus": [
