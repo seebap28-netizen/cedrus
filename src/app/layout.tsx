@@ -16,7 +16,7 @@ const cormorant = Cormorant_Garamond({
 export const metadata: Metadata = {
   title: "Cedrus Café Restaurant — Coelemu",
   description:
-    "Café Restaurant Cedrus en Palazuelos 318, Coelemu. Cartas de lunes a sábado y domingo. Fono +56 9522079863.",
+    "Café Restaurant Cedrus en Palazuelos 318, Coelemu. Cartas de lunes a sábado y domingo. Fono +56 9 5207 9863.",
 };
 
 export default function RootLayout({ children }: LayoutProps<"/">) {

@@ -137,13 +137,13 @@ export default async function HomePage() {
           <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-gold">Cedrus</p>
-              <h2 className="font-serif mt-3 text-4xl">En Coelemu</h2>
+              <h2 className="font-serif mt-3 text-4xl">Un lugar para quedarse</h2>
               <p className="mt-5 leading-7 text-cream/80">
-                Estamos en {site.address}. Reservá o consultá al{" "}
-                <a className="text-gold underline" href={`tel:${site.phoneTel}`}>
-                  {site.phoneDisplay}
-                </a>
-                .
+                Frente a la plaza de Coelemu, Cedrus es café y restaurant: mesas al
+                aire libre, sala de madera y una carta amplia para almorzar, tomar
+                algo o reunirse en familia. De lunes a sábado hay desayunos, platos,
+                sandwichs y pizzas; el domingo se arma otra mesa, con tablas y
+                carnes para compartir.
               </p>
             </div>
             <div className="relative h-80 overflow-hidden rounded-2xl">
