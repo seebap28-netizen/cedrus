@@ -10,13 +10,32 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const [categories, products] = await Promise.all([getCategories(), getProducts()]);
   const current = todayMenu();
-  const featured = products
-    .filter((item) => item.featured && item.available && isOnMenu(item, current))
-    .slice(0, 3);
-  const highlights =
-    featured.length > 0
-      ? featured
-      : products.filter((item) => item.available && isOnMenu(item, current)).slice(0, 3);
+  const highlightIds =
+    current === "weekend"
+      ? ["prod-dom-tortas", "prod-dom-filete-pobre"]
+      : [
+          "prod-torta-amor",
+          "prod-hamburguesa-cedrus",
+          "prod-filete-pobre",
+        ];
+  const availableNow = products.filter(
+    (item) => item.available && isOnMenu(item, current),
+  );
+  const byId = new Map(availableNow.map((item) => [item.id, item]));
+  const selected = highlightIds
+    .map((id) => byId.get(id))
+    .filter((item): item is NonNullable<typeof item> => Boolean(item));
+  const featured = availableNow.filter((item) => item.featured);
+  const highlights = (
+    selected.length > 0
+      ? [
+          ...selected,
+          ...featured.filter((item) => !highlightIds.includes(item.id)),
+        ]
+      : featured.length > 0
+        ? featured
+        : availableNow
+  ).slice(0, 3);
   const categoryName = (id: string) =>
     categories.find((category) => category.id === id)?.name ?? "";
 

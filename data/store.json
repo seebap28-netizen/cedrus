@@ -847,9 +847,9 @@
       "description": "Filete a lo pobre.",
       "price": 17200,
       "categoryId": "cat-platos",
-      "imageUrl": "",
+      "imageUrl": "/platos/filete-a-lo-pobre.jpg",
       "available": true,
-      "featured": false,
+      "featured": true,
       "menus": [
         "weekday"
       ]
@@ -1289,7 +1289,7 @@
       "description": "Lechuga, tocino, tomate, cebolla, queso y mayonesa.",
       "price": 8900,
       "categoryId": "cat-sandwichs",
-      "imageUrl": "",
+      "imageUrl": "/platos/hamburguesa-cedrus.jpg",
       "available": true,
       "featured": true,
       "menus": [
@@ -2173,9 +2173,9 @@
       "description": "Porción de torta amor. Según disponibilidad del día.",
       "price": 5600,
       "categoryId": "cat-pasteleria",
-      "imageUrl": "",
+      "imageUrl": "/platos/torta.jpg",
       "available": true,
-      "featured": false,
+      "featured": true,
       "menus": [
         "weekday"
       ]
@@ -3798,7 +3798,7 @@
       "description": "Filete a lo pobre. Domingos en Cedrus.",
       "price": 21900,
       "categoryId": "cat-platos",
-      "imageUrl": "",
+      "imageUrl": "/platos/filete-a-lo-pobre.jpg",
       "available": true,
       "featured": false,
       "menus": [
@@ -3980,7 +3980,7 @@
       "description": "Porción de torta. Domingos en Cedrus.",
       "price": 5500,
       "categoryId": "cat-pasteleria",
-      "imageUrl": "",
+      "imageUrl": "/platos/torta.jpg",
       "available": true,
       "featured": false,
       "menus": [
