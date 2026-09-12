@@ -4,7 +4,9 @@ import seedJson from "../../data/store.json";
 import { parseMenus } from "./menus";
 import type { Category, Product, StoreData } from "./types";
 
-const dataPath = path.join(process.cwd(), "data", "store.json");
+const dataPath = process.env.VERCEL
+  ? path.join("/tmp", "cedrus-store.json")
+  : path.join(process.cwd(), "data", "store.json");
 const seed = seedJson as StoreData;
 
 async function ensureStore(): Promise<StoreData> {
@@ -28,14 +30,22 @@ async function ensureStore(): Promise<StoreData> {
     if (changed) await fs.writeFile(dataPath, JSON.stringify(migrated, null, 2), "utf8");
     return migrated;
   } catch {
-    await fs.writeFile(dataPath, JSON.stringify(seed, null, 2), "utf8");
+    try {
+      await fs.writeFile(dataPath, JSON.stringify(seed, null, 2), "utf8");
+    } catch {
+      // Vercel filesystem can be read-only outside /tmp
+    }
     return structuredClone(seed);
   }
 }
 
 async function writeStore(data: StoreData) {
-  await fs.mkdir(path.dirname(dataPath), { recursive: true });
-  await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+  try {
+    await fs.mkdir(path.dirname(dataPath), { recursive: true });
+    await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
+  } catch (error) {
+    console.error("No se pudo guardar el menú", error);
+  }
 }
 
 export async function getStore() {

@@ -8,7 +8,7 @@ export async function GET() {
   return NextResponse.json(categories);
 }
 
-export async function POST() {
+export async function POST(request: Request) {
   if (!(await requireAdmin())) return unauthorized();
   const body = (await request.json()) as {
     name?: string;
