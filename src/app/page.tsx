@@ -32,7 +32,7 @@ export default async function HomePage() {
               {site.address}
             </p>
             <h1 className="font-serif max-w-3xl text-5xl leading-tight text-cream sm:text-7xl">
-              Café y restaurant en Coelemu
+              Café y Restaurant en Coelemu
             </h1>
             <p className="mt-6 max-w-xl text-lg text-cream/80">
               Carta de lunes a sábado y carta de los domingos, para compartir en
@@ -104,7 +104,7 @@ export default async function HomePage() {
               <p className="text-xs uppercase tracking-[0.3em] text-gold">Cedrus</p>
               <h2 className="font-serif mt-3 text-4xl">Un lugar para quedarse</h2>
               <p className="mt-5 leading-7 text-cream/80">
-                Frente a la plaza de Coelemu, Cedrus es café y restaurant: mesas al
+                Frente a la plaza de Coelemu, Cedrus es café y Restaurant: mesas al
                 aire libre, sala de madera y una carta amplia para almorzar, tomar
                 algo o reunirse en familia. De lunes a sábado hay desayunos, platos,
                 sandwichs y pizzas; el domingo se arma otra mesa, con tablas y
