@@ -1,7 +1,8 @@
 import Image from "next/image";
+import { FeaturedRunway } from "@/components/FeaturedRunway";
 import { SiteFooter, SiteHeader } from "@/components/SiteChrome";
-import { MENUS, isOnMenu, menuMeta, menuPath, todayMenu } from "@/lib/menus";
-import { formatPrice } from "@/lib/money";
+import { MENUS, menuPath, todayMenu } from "@/lib/menus";
+import { homeHighlights } from "@/lib/highlights";
 import { getCategories, getProducts } from "@/lib/store";
 import { site } from "@/lib/site";
 
@@ -10,34 +11,7 @@ export const dynamic = "force-dynamic";
 export default async function HomePage() {
   const [categories, products] = await Promise.all([getCategories(), getProducts()]);
   const current = todayMenu();
-  const highlightIds =
-    current === "weekend"
-      ? ["prod-dom-tortas", "prod-dom-filete-pobre"]
-      : [
-          "prod-torta-amor",
-          "prod-hamburguesa-cedrus",
-          "prod-filete-pobre",
-        ];
-  const availableNow = products.filter(
-    (item) => item.available && isOnMenu(item, current),
-  );
-  const byId = new Map(availableNow.map((item) => [item.id, item]));
-  const selected = highlightIds
-    .map((id) => byId.get(id))
-    .filter((item): item is NonNullable<typeof item> => Boolean(item));
-  const featured = availableNow.filter((item) => item.featured);
-  const highlights = (
-    selected.length > 0
-      ? [
-          ...selected,
-          ...featured.filter((item) => !highlightIds.includes(item.id)),
-        ]
-      : featured.length > 0
-        ? featured
-        : availableNow
-  ).slice(0, 3);
-  const categoryName = (id: string) =>
-    categories.find((category) => category.id === id)?.name ?? "";
+  const highlights = homeHighlights(products, categories);
 
   return (
     <>
@@ -108,13 +82,11 @@ export default async function HomePage() {
           </div>
         </section>
 
-        <section className="mx-auto max-w-6xl px-6 pb-20">
-          <div className="mb-12 flex items-end justify-between gap-6">
+        <section className="pb-20">
+          <div className="mx-auto mb-12 flex max-w-6xl items-end justify-between gap-6 px-6">
             <div>
               <p className="text-xs uppercase tracking-[0.3em] text-gold">Destacados</p>
-              <h2 className="font-serif mt-2 text-4xl text-cedar">
-                De la {menuMeta(current).label.toLowerCase()}
-              </h2>
+              <h2 className="font-serif mt-2 text-4xl text-cedar">De la casa</h2>
             </div>
             <a
               href={menuPath(current)}
@@ -123,35 +95,7 @@ export default async function HomePage() {
               Carta completa →
             </a>
           </div>
-          <div className="grid gap-8 md:grid-cols-3">
-            {highlights.map((product) => (
-              <article key={product.id} className="overflow-hidden rounded-2xl bg-white shadow-sm">
-                <div className="relative h-56">
-                  {product.imageUrl ? (
-                    <Image
-                      src={product.imageUrl}
-                      alt={product.name}
-                      fill
-                      className="object-cover"
-                      sizes="(max-width: 768px) 100vw, 33vw"
-                    />
-                  ) : (
-                    <div className="flex h-full items-center justify-center bg-cedar/10 px-4 text-center text-sm text-muted">
-                      {categoryName(product.categoryId)}
-                    </div>
-                  )}
-                </div>
-                <div className="p-6">
-                  <p className="text-xs uppercase tracking-widest text-gold">
-                    {categoryName(product.categoryId)}
-                  </p>
-                  <h3 className="font-serif mt-2 text-2xl text-cedar">{product.name}</h3>
-                  <p className="mt-2 text-sm text-muted">{product.description}</p>
-                  <p className="mt-4 font-medium text-cedar">{formatPrice(product.price)}</p>
-                </div>
-              </article>
-            ))}
-          </div>
+          <FeaturedRunway items={highlights} />
         </section>
 
         <section className="bg-cedar text-cream">
