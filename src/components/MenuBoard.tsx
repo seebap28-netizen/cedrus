@@ -89,7 +89,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   >
                     <MenuArt
                       categoryId={category.id}
-                      className="absolute right-3 top-5 h-16 w-14 text-ink/75 md:hidden"
+                      className="absolute right-3 top-4 h-[4.5rem] w-16 text-ink/80 md:hidden"
                     />
                     <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
                       {category.name}
@@ -97,7 +97,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                     <div className="mx-auto mt-3 h-px w-24 bg-ink/70" />
                   </header>
 
-                  <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_8.5rem] md:items-start">
+                  <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_10rem] md:items-start">
                     <ul>
                       {items.map((product) => (
                         <li key={product.id} className="py-2.5">
@@ -134,7 +134,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                     <aside className="hidden flex-col items-center justify-start md:flex">
                       <MenuArt
                         categoryId={category.id}
-                        className="h-36 w-32 text-ink/80"
+                        className="h-44 w-40 text-ink/85"
                       />
                     </aside>
                   </div>
