@@ -24,6 +24,7 @@ export default function ProductsAdminPage() {
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
   const [uploading, setUploading] = useState(false);
+  const [carta, setCarta] = useState<"all" | MenuId>("all");
   const formRef = useRef<HTMLFormElement>(null);
   const fileRef = useRef<HTMLInputElement>(null);
 
@@ -207,6 +208,8 @@ export default function ProductsAdminPage() {
       <p className="mt-2 text-muted">
         El menú público se actualiza al crear, editar o desactivar platos. Cada
         producto entra en la carta de lunes a sábado, la de domingo, o ambas.
+        Los platos de domingo son independientes: para quitar uno de esa carta,
+        filtrá por Domingo y eliminalo ahí.
       </p>
 
       <form
@@ -354,6 +357,28 @@ export default function ProductsAdminPage() {
       </form>
 
       <div className="mt-8 overflow-x-auto rounded-2xl bg-white shadow-sm">
+        <div className="flex flex-wrap gap-2 border-b border-black/5 px-4 py-3">
+          {(
+            [
+              ["all", "Todas las cartas"],
+              ["weekday", "Lunes a sábado"],
+              ["weekend", "Domingo"],
+            ] as const
+          ).map(([id, label]) => (
+            <button
+              key={id}
+              type="button"
+              onClick={() => setCarta(id)}
+              className={`rounded-full px-3 py-1 text-xs ${
+                carta === id
+                  ? "bg-cedar text-cream"
+                  : "bg-cedar/10 text-cedar"
+              }`}
+            >
+              {label}
+            </button>
+          ))}
+        </div>
         <table className="w-full min-w-[720px] text-left text-sm">
           <thead className="bg-cedar/5 text-muted">
             <tr>
@@ -366,7 +391,12 @@ export default function ProductsAdminPage() {
             </tr>
           </thead>
           <tbody>
-            {items.map((item) => (
+            {items
+              .filter(
+                (item) =>
+                  carta === "all" || parseMenus(item.menus).includes(carta),
+              )
+              .map((item) => (
               <tr key={item.id} className="border-t border-black/5">
                 <td className="px-4 py-3">
                   <div className="flex items-start gap-3">

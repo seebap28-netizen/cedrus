@@ -66,11 +66,11 @@ async function readBlobStore(): Promise<StoreData | null> {
   }
 }
 
-async function writeBlobStore(data: StoreData) {
+async function writeBlobStore(data: StoreData, overwrite = true) {
   await put(STORE_BLOB, JSON.stringify(data), {
     access: "public",
     addRandomSuffix: false,
-    allowOverwrite: true,
+    allowOverwrite: overwrite,
     contentType: "application/json",
     cacheControlMaxAge: 0,
     ...blobAuth(),
@@ -83,9 +83,10 @@ async function ensureStore(): Promise<StoreData> {
     if (remote) return remote;
     const initial = normalize(structuredClone(seed));
     try {
-      await writeBlobStore(initial);
-    } catch (error) {
-      console.error("No se pudo crear el menú remoto", error);
+      await writeBlobStore(initial, false);
+    } catch {
+      const retry = await readBlobStore();
+      if (retry) return retry;
     }
     return initial;
   }
@@ -190,11 +191,19 @@ export async function updateProduct(
     ...input,
     menus: input.menus ? parseMenus(input.menus) : store.products[index].menus,
   };
+  if (input.imageUrl === "") {
+    const url = previousUrl;
+    if (url) {
+      store.products = store.products.map((item) =>
+        item.imageUrl === url ? { ...item, imageUrl: "" } : item,
+      );
+    }
+  }
   await writeStore(store);
   if (input.imageUrl !== undefined && previousUrl && previousUrl !== store.products[index].imageUrl) {
     await deleteUploadIfUnused(previousUrl, store.products);
   }
-  return store.products[index];
+  return store.products.find((item) => item.id === id) ?? store.products[index];
 }
 
 export async function deleteProduct(id: string): Promise<boolean> {

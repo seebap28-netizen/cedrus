@@ -5,6 +5,7 @@ import { isOnMenu, menuFromSlug, menuMeta } from "@/lib/menus";
 import { getCategories, getProducts } from "@/lib/store";
 
 export const dynamic = "force-dynamic";
+export const revalidate = 0;
 
 export default async function MenuCartaPage({
   params,

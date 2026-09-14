@@ -3785,7 +3785,7 @@
       "description": "Entraña a lo pobre. Domingos en Cedrus.",
       "price": 23700,
       "categoryId": "cat-platos",
-      "imageUrl": "/platos/entrana-a-lo-pobre.jpg",
+      "imageUrl": "",
       "available": true,
       "featured": false,
       "menus": [
@@ -3980,7 +3980,7 @@
       "description": "Porción de torta. Domingos en Cedrus.",
       "price": 5500,
       "categoryId": "cat-pasteleria",
-      "imageUrl": "/platos/torta.jpg",
+      "imageUrl": "",
       "available": true,
       "featured": false,
       "menus": [
