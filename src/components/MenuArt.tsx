@@ -59,6 +59,10 @@ export function isAlcoholCategory(categoryId: string) {
   return ALCOHOL.has(categoryId);
 }
 
+export function isDarkCategory(categoryId: string) {
+  return ALCOHOL.has(categoryId) || categoryId === "cat-pizzas";
+}
+
 export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-desayunos") return "bg-[#fbf3d4]";
   if (categoryId === "cat-cafeteria") return "bg-[#fde8d6]";
@@ -72,14 +76,11 @@ export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-agregados") return "bg-[#e8d5a0]";
   if (categoryId === "cat-tablas") return "bg-[#d4b896]";
   if (categoryId === "cat-papas") return "bg-[#f5d04a]";
-  if (categoryId === "cat-pizzas") return "bg-[#f6d4cf]";
+  if (categoryId === "cat-pizzas") return "bg-[#e85a4f]";
+  if (categoryId === "cat-heladeria") return "bg-[#c9f0de]";
   if (categoryId === "cat-bebidas-jugos") return "bg-[#e4c9d2]";
   if (ALCOHOL.has(categoryId)) return "bg-black";
-  if (
-    categoryId === "cat-pasteleria" ||
-    categoryId === "cat-heladeria" ||
-    categoryId === "cat-nino"
-  ) {
+  if (categoryId === "cat-pasteleria" || categoryId === "cat-nino") {
     return "bg-[#f7e4e6]";
   }
   return "bg-[#fffaf3]";
@@ -98,14 +99,11 @@ export function categoryHeaderClass(categoryId: string) {
   if (categoryId === "cat-agregados") return "bg-[#c9a85c]";
   if (categoryId === "cat-tablas") return "bg-[#b08968]";
   if (categoryId === "cat-papas") return "bg-[#e6b800]";
-  if (categoryId === "cat-pizzas") return "bg-[#e5b3ad]";
+  if (categoryId === "cat-pizzas") return "bg-[#c7382c]";
+  if (categoryId === "cat-heladeria") return "bg-[#7ecfb0]";
   if (categoryId === "cat-bebidas-jugos") return "bg-[#c47a8a]";
   if (ALCOHOL.has(categoryId)) return "bg-black";
-  if (
-    categoryId === "cat-pasteleria" ||
-    categoryId === "cat-heladeria" ||
-    categoryId === "cat-nino"
-  ) {
+  if (categoryId === "cat-pasteleria" || categoryId === "cat-nino") {
     return "bg-[#f3d4d8]";
   }
   return "";

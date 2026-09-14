@@ -4,7 +4,7 @@ import {
   categoryHeaderClass,
   categoryIcon,
   categorySheetClass,
-  isAlcoholCategory,
+  isDarkCategory,
   MenuArt,
 } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
@@ -81,13 +81,13 @@ export function MenuBoard({ categories, products, menu }: Props) {
 
           <div className="space-y-8">
             {groups.map(({ category, items }) => {
-              const alcohol = isAlcoholCategory(category.id);
+              const dark = isDarkCategory(category.id);
               return (
               <section
                 key={category.id}
                 id={category.id}
                 className={`scroll-mt-8 overflow-hidden rounded-sm border shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${
-                  alcohol ? "border-white/10" : "border-black/5"
+                  dark ? "border-white/10" : "border-black/5"
                 } ${categorySheetClass(category.id)}`}
               >
                 <header
@@ -99,14 +99,14 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   />
                   <h2
                     className={`font-serif text-4xl uppercase tracking-[0.18em] ${
-                      alcohol ? "text-cream" : "text-ink"
+                      dark ? "text-cream" : "text-ink"
                     }`}
                   >
                     {category.name}
                   </h2>
                   <div
                     className={`mx-auto mt-3 h-px w-24 ${
-                      alcohol ? "bg-cream/70" : "bg-ink/70"
+                      dark ? "bg-cream/70" : "bg-ink/70"
                     }`}
                   />
                 </header>
@@ -127,14 +127,14 @@ export function MenuBoard({ categories, products, menu }: Props) {
                           <div className="min-w-0 flex-1">
                             <div
                               className={`flex items-baseline ${
-                                alcohol ? "text-cream" : "text-ink"
+                                dark ? "text-cream" : "text-ink"
                               }`}
                             >
                               <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
                                 {product.name}
                               </p>
                               <span
-                                className={alcohol ? "menu-dots-light" : "menu-dots"}
+                                className={dark ? "menu-dots-light" : "menu-dots"}
                               />
                               <p className="shrink-0 text-[15px] font-semibold tabular-nums sm:text-base">
                                 {formatPrice(product.price)}
@@ -143,7 +143,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                             {product.description ? (
                               <p
                                 className={`mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] ${
-                                  alcohol ? "text-cream/65" : "text-muted"
+                                  dark ? "text-cream/65" : "text-muted"
                                 }`}
                               >
                                 {product.description}
@@ -163,7 +163,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 {category.description ? (
                   <p
                     className={`border-t px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] ${
-                      alcohol
+                      dark
                         ? "border-white/15 text-cream/70"
                         : "border-ink/10 text-ink/70"
                     }`}
