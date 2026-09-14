@@ -17,6 +17,7 @@ export async function setAdminCookie() {
   jar.set(COOKIE, await createSessionToken(), {
     httpOnly: true,
     sameSite: "lax",
+    secure: process.env.VERCEL === "1",
     path: "/",
     maxAge: 60 * 60 * 24 * 7,
   });

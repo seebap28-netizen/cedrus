@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useState } from "react";
+import { FormEvent, useEffect, useRef, useState } from "react";
 import { formatPrice } from "@/lib/money";
 import { MENUS, menusLabel, parseMenus } from "@/lib/menus";
 import type { Category, MenuId, Product } from "@/lib/types";
@@ -23,18 +23,26 @@ export default function ProductsAdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const formRef = useRef<HTMLFormElement>(null);
 
   async function load() {
-    const [cats, prods] = await Promise.all([
-      fetch("/api/categories").then((res) => res.json()),
-      fetch("/api/products").then((res) => res.json()),
-    ]);
-    setCategories(cats);
-    setItems(prods);
-    setForm((current) => ({
-      ...current,
-      categoryId: current.categoryId || cats[0]?.id || "",
-    }));
+    try {
+      const [cats, prods] = await Promise.all([
+        fetch("/api/categories", { cache: "no-store" }).then((res) => res.json()),
+        fetch("/api/products", { cache: "no-store" }).then((res) => res.json()),
+      ]);
+      if (!Array.isArray(cats) || !Array.isArray(prods)) {
+        throw new Error("No se pudo cargar el menú");
+      }
+      setCategories(cats);
+      setItems(prods);
+      setForm((current) => ({
+        ...current,
+        categoryId: current.categoryId || cats[0]?.id || "",
+      }));
+    } catch {
+      setError("No se pudo cargar el menú");
+    }
   }
 
   useEffect(() => {
@@ -54,6 +62,7 @@ export default function ProductsAdminPage() {
       menus: parseMenus(product.menus),
     });
     setError("");
+    formRef.current?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   function reset() {
@@ -73,26 +82,43 @@ export default function ProductsAdminPage() {
     }
     setLoading(true);
     setError("");
-    const url = editingId ? `/api/products/${editingId}` : "/api/products";
-    const response = await fetch(url, {
-      method: editingId ? "PUT" : "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify(form),
-    });
-    const data = await response.json();
-    setLoading(false);
-    if (!response.ok) {
-      setError(data.error || "No se pudo guardar");
-      return;
+    try {
+      const url = editingId
+        ? `/api/products/${encodeURIComponent(editingId)}`
+        : "/api/products";
+      const response = await fetch(url, {
+        method: editingId ? "PUT" : "POST",
+        cache: "no-store",
+        credentials: "same-origin",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(form),
+      });
+      const data = (await response.json().catch(() => null)) as {
+        error?: string;
+      } | null;
+      if (!response.ok) {
+        setError(data?.error || "No se pudo guardar");
+        return;
+      }
+      reset();
+      await load();
+    } catch {
+      setError("No se pudo guardar");
+    } finally {
+      setLoading(false);
     }
-    reset();
-    await load();
   }
 
   async function remove(id: string) {
     if (!confirm("¿Eliminar este producto?")) return;
-    const response = await fetch(`/api/products/${id}`, { method: "DELETE" });
-    const data = await response.json();
+    const response = await fetch(`/api/products/${encodeURIComponent(id)}`, {
+      method: "DELETE",
+      cache: "no-store",
+      credentials: "same-origin",
+    });
+    const data = (await response.json().catch(() => null)) as {
+      error?: string;
+    } | null;
     if (!response.ok) {
       setError(data.error || "No se pudo eliminar");
       return;
@@ -113,6 +139,7 @@ export default function ProductsAdminPage() {
       </p>
 
       <form
+        ref={formRef}
         onSubmit={onSubmit}
         className="mt-8 grid gap-4 rounded-2xl bg-white p-6 shadow-sm md:grid-cols-2"
       >

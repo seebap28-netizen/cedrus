@@ -3,6 +3,8 @@ import { revalidatePath } from "next/cache";
 import { requireAdmin, unauthorized } from "@/lib/api-guard";
 import { deleteCategory, updateCategory } from "@/lib/store";
 
+export const dynamic = "force-dynamic";
+
 type Params = { params: Promise<{ id: string }> };
 
 export async function PUT(request: Request, { params }: Params) {

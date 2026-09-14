@@ -9,43 +9,52 @@ const dataPath = process.env.VERCEL
   : path.join(process.cwd(), "data", "store.json");
 const seed = seedJson as StoreData;
 
-async function ensureStore(): Promise<StoreData> {
+let cache: StoreData | null = null;
+
+function normalize(data: StoreData): StoreData {
+  return {
+    categories: data.categories,
+    products: data.products.map((item) => ({
+      ...item,
+      menus: parseMenus(item.menus),
+    })),
+  };
+}
+
+async function persist(data: StoreData) {
   await fs.mkdir(path.dirname(dataPath), { recursive: true });
+  const payload = JSON.stringify(data, null, 2);
+  const tempPath = `${dataPath}.${process.pid}.tmp`;
+  await fs.writeFile(tempPath, payload, "utf8");
+  await fs.copyFile(tempPath, dataPath);
+  await fs.unlink(tempPath).catch(() => undefined);
+}
+
+async function ensureStore(): Promise<StoreData> {
+  if (cache) return cache;
+
   try {
     const raw = await fs.readFile(dataPath, "utf8");
     const parsed = JSON.parse(raw) as StoreData;
     if (!Array.isArray(parsed.categories) || !Array.isArray(parsed.products)) {
       throw new Error("invalid store");
     }
-    const products = parsed.products.map((item) => ({
-      ...item,
-      menus: parseMenus(item.menus),
-    }));
-    const changed = parsed.products.some(
-      (item, index) =>
-        JSON.stringify(parseMenus(item.menus)) !==
-        JSON.stringify(products[index]?.menus),
-    );
-    const migrated: StoreData = { ...parsed, products };
-    if (changed) await fs.writeFile(dataPath, JSON.stringify(migrated, null, 2), "utf8");
-    return migrated;
+    cache = normalize(parsed);
+    return cache;
   } catch {
+    cache = normalize(structuredClone(seed));
     try {
-      await fs.writeFile(dataPath, JSON.stringify(seed, null, 2), "utf8");
+      await persist(cache);
     } catch {
       // Vercel filesystem can be read-only outside /tmp
     }
-    return structuredClone(seed);
+    return cache;
   }
 }
 
 async function writeStore(data: StoreData) {
-  try {
-    await fs.mkdir(path.dirname(dataPath), { recursive: true });
-    await fs.writeFile(dataPath, JSON.stringify(data, null, 2), "utf8");
-  } catch (error) {
-    console.error("No se pudo guardar el menú", error);
-  }
+  cache = data;
+  await persist(data);
 }
 
 export async function getStore() {

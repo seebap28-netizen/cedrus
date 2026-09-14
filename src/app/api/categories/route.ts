@@ -3,6 +3,8 @@ import { revalidatePath } from "next/cache";
 import { requireAdmin, unauthorized } from "@/lib/api-guard";
 import { createCategory, getCategories } from "@/lib/store";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   const categories = await getCategories();
   return NextResponse.json(categories);

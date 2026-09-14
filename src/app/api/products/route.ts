@@ -4,9 +4,18 @@ import { requireAdmin, unauthorized } from "@/lib/api-guard";
 import { parseMenus } from "@/lib/menus";
 import { createProduct, getProducts, getStore } from "@/lib/store";
 
+export const dynamic = "force-dynamic";
+
+function noStore(data: unknown, init?: { status?: number }) {
+  return NextResponse.json(data, {
+    status: init?.status ?? 200,
+    headers: { "Cache-Control": "no-store" },
+  });
+}
+
 export async function GET() {
   const products = await getProducts();
-  return NextResponse.json(products);
+  return noStore(products);
 }
 
 export async function POST(request: Request) {
@@ -37,18 +46,29 @@ export async function POST(request: Request) {
       { status: 400 },
     );
   }
-  const product = await createProduct({
-    name: body.name.trim(),
-    description: body.description?.trim() || "",
-    price: Number(body.price) || 0,
-    categoryId: body.categoryId,
-    imageUrl: body.imageUrl?.trim() || "",
-    available: body.available ?? true,
-    featured: body.featured ?? false,
-    menus: parseMenus(body.menus),
-  });
-  revalidatePath("/");
-  revalidatePath("/menu");
-  revalidatePath("/admin");
-  return NextResponse.json(product, { status: 201 });
+  try {
+    const product = await createProduct({
+      name: body.name.trim(),
+      description: body.description?.trim() || "",
+      price: Number(body.price) || 0,
+      categoryId: body.categoryId,
+      imageUrl: body.imageUrl?.trim() || "",
+      available: body.available ?? true,
+      featured: body.featured ?? false,
+      menus: parseMenus(body.menus),
+    });
+    revalidatePath("/");
+    revalidatePath("/menu");
+    revalidatePath("/admin");
+    return NextResponse.json(product, {
+      status: 201,
+      headers: { "Cache-Control": "no-store" },
+    });
+  } catch (error) {
+    console.error("No se pudo crear el producto", error);
+    return NextResponse.json(
+      { error: "No se pudo guardar el producto" },
+      { status: 500 },
+    );
+  }
 }

@@ -4,7 +4,15 @@ import { requireAdmin, unauthorized } from "@/lib/api-guard";
 import { parseMenus } from "@/lib/menus";
 import { deleteProduct, getStore, updateProduct } from "@/lib/store";
 
+export const dynamic = "force-dynamic";
+
 type Params = { params: Promise<{ id: string }> };
+
+function refresh() {
+  revalidatePath("/");
+  revalidatePath("/menu");
+  revalidatePath("/admin");
+}
 
 export async function PUT(request: Request, { params }: Params) {
   if (!(await requireAdmin())) return unauthorized();
@@ -34,36 +42,54 @@ export async function PUT(request: Request, { params }: Params) {
       { status: 400 },
     );
   }
-  const updated = await updateProduct(id, {
-    ...(body.name !== undefined ? { name: body.name.trim() } : {}),
-    ...(body.description !== undefined
-      ? { description: body.description.trim() }
-      : {}),
-    ...(body.price !== undefined ? { price: Number(body.price) || 0 } : {}),
-    ...(body.categoryId !== undefined ? { categoryId: body.categoryId } : {}),
-    ...(body.imageUrl !== undefined ? { imageUrl: body.imageUrl.trim() } : {}),
-    ...(body.available !== undefined ? { available: Boolean(body.available) } : {}),
-    ...(body.featured !== undefined ? { featured: Boolean(body.featured) } : {}),
-    ...(body.menus !== undefined ? { menus: parseMenus(body.menus) } : {}),
-  });
+  let updated;
+  try {
+    updated = await updateProduct(id, {
+      ...(body.name !== undefined ? { name: body.name.trim() } : {}),
+      ...(body.description !== undefined
+        ? { description: body.description.trim() }
+        : {}),
+      ...(body.price !== undefined ? { price: Number(body.price) || 0 } : {}),
+      ...(body.categoryId !== undefined ? { categoryId: body.categoryId } : {}),
+      ...(body.imageUrl !== undefined ? { imageUrl: body.imageUrl.trim() } : {}),
+      ...(body.available !== undefined ? { available: Boolean(body.available) } : {}),
+      ...(body.featured !== undefined ? { featured: Boolean(body.featured) } : {}),
+      ...(body.menus !== undefined ? { menus: parseMenus(body.menus) } : {}),
+    });
+  } catch (error) {
+    console.error("No se pudo actualizar el producto", error);
+    return NextResponse.json(
+      { error: "No se pudo guardar el producto" },
+      { status: 500 },
+    );
+  }
   if (!updated) {
     return NextResponse.json({ error: "Producto no encontrado" }, { status: 404 });
   }
-  revalidatePath("/");
-  revalidatePath("/menu");
-  revalidatePath("/admin");
-  return NextResponse.json(updated);
+  refresh();
+  return NextResponse.json(updated, { headers: { "Cache-Control": "no-store" } });
+}
+
+export async function PATCH(request: Request, context: Params) {
+  return PUT(request, context);
 }
 
 export async function DELETE(_request: Request, { params }: Params) {
   if (!(await requireAdmin())) return unauthorized();
   const { id } = await params;
-  const ok = await deleteProduct(id);
+  let ok = false;
+  try {
+    ok = await deleteProduct(id);
+  } catch (error) {
+    console.error("No se pudo eliminar el producto", error);
+    return NextResponse.json(
+      { error: "No se pudo eliminar el producto" },
+      { status: 500 },
+    );
+  }
   if (!ok) {
     return NextResponse.json({ error: "Producto no encontrado" }, { status: 404 });
   }
-  revalidatePath("/");
-  revalidatePath("/menu");
-  revalidatePath("/admin");
-  return NextResponse.json({ ok: true });
+  refresh();
+  return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
 }
