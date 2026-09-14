@@ -66,7 +66,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 id={category.id}
                 className="scroll-mt-8 overflow-hidden rounded-2xl bg-white shadow-sm"
               >
-                <div className="bg-cedar px-6 py-4">
+                <div className="bg-cedar-soft px-6 py-4">
                   <h2 className="font-serif text-3xl text-cream">{category.name}</h2>
                   {category.description ? (
                     <p className="mt-1 text-sm text-cream/70">{category.description}</p>

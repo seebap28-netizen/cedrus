@@ -2,6 +2,7 @@
 
 :root {
   --cedar: #1c3a2e;
+  --cedar-soft: #2f5646;
   --cedar-deep: #10241c;
   --gold: #c4a35a;
   --cream: #f6f0e6;
@@ -11,6 +12,7 @@
 
 @theme inline {
   --color-cedar: var(--cedar);
+  --color-cedar-soft: var(--cedar-soft);
   --color-cedar-deep: var(--cedar-deep);
   --color-gold: var(--gold);
   --color-cream: var(--cream);
