@@ -28,7 +28,7 @@ export default async function MenuCartaPage({
           <p className="mt-4 max-w-2xl text-cream/75">{meta.subtitle}</p>
         </div>
       </div>
-      <main className="mx-auto w-full max-w-6xl flex-1 px-6 py-12">
+      <main className="mx-auto w-full max-w-3xl flex-1 px-4 py-12 sm:px-6">
         <MenuBoard
           categories={categories}
           products={products.filter((item) => isOnMenu(item, menu))}

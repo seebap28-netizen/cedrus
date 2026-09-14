@@ -2,7 +2,7 @@
 
 :root {
   --cedar: #1c3a2e;
-  --cedar-soft: #4d826e;
+  --cedar-soft: #2f5646;
   --cedar-deep: #10241c;
   --gold: #c4a35a;
   --cream: #f6f0e6;
@@ -34,4 +34,11 @@ body {
 
 .font-serif {
   font-family: var(--font-cormorant), Georgia, serif;
+}
+
+.menu-dots {
+  flex: 1 1 auto;
+  min-width: 1.25rem;
+  margin: 0 0.55rem 0.28em;
+  border-bottom: 1px dotted color-mix(in srgb, var(--ink) 42%, transparent);
 }

@@ -1,5 +1,6 @@
 import { formatPrice } from "@/lib/money";
 import { MENUS, menuPath } from "@/lib/menus";
+import { isBlushCategory, MenuArt } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
 
 function photoSrc(url: string) {
@@ -25,21 +26,25 @@ export function MenuBoard({ categories, products, menu }: Props) {
 
   return (
     <div>
-      <div className="mb-8 grid gap-3 sm:grid-cols-2">
+      <div className="mb-10 grid gap-3 sm:grid-cols-2">
         {MENUS.map((item) => {
           const selected = item.id === menu;
           return (
             <a
               key={item.id}
               href={menuPath(item.id)}
-              className={`rounded-2xl border px-5 py-4 ${
+              className={`rounded-sm border px-5 py-4 text-center ${
                 selected
-                  ? "border-gold bg-cedar text-cream"
-                  : "border-transparent bg-white text-cedar hover:border-gold/40"
+                  ? "border-cedar bg-cedar text-cream"
+                  : "border-cedar/20 bg-[#fffaf3] text-cedar hover:border-gold"
               }`}
             >
               <p className="font-serif text-2xl">{item.label}</p>
-              <p className={`text-sm ${selected ? "text-cream/70" : "text-muted"}`}>
+              <p
+                className={`mt-1 text-xs uppercase tracking-[0.22em] ${
+                  selected ? "text-cream/70" : "text-muted"
+                }`}
+              >
                 {item.subtitle}
               </p>
             </a>
@@ -48,67 +53,100 @@ export function MenuBoard({ categories, products, menu }: Props) {
       </div>
 
       {groups.length === 0 ? (
-        <p className="rounded-2xl bg-white p-10 text-center text-muted">
+        <p className="rounded-sm bg-[#fffaf3] p-10 text-center text-muted shadow-sm">
           No hay platos disponibles en esta carta.
         </p>
       ) : (
         <>
-          <div className="mb-10 flex flex-wrap gap-2">
+          <nav className="mb-10 flex flex-wrap justify-center gap-x-5 gap-y-2 border-y border-cedar/10 py-4">
             {groups.map(({ category }) => (
               <a
                 key={category.id}
                 href={`#${category.id}`}
-                className="rounded-full bg-white px-4 py-2 text-sm text-cedar hover:bg-cedar hover:text-cream"
+                className="text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
               >
                 {category.name}
               </a>
             ))}
-          </div>
-          <div className="space-y-10">
-            {groups.map(({ category, items }) => (
-              <section
-                key={category.id}
-                id={category.id}
-                className="scroll-mt-8 overflow-hidden rounded-2xl bg-white shadow-sm"
-              >
-                <div className="bg-cedar-soft px-6 py-4">
-                  <h2 className="font-serif text-3xl text-cream">{category.name}</h2>
-                  {category.description ? (
-                    <p className="mt-1 text-sm text-cream/70">{category.description}</p>
-                  ) : null}
-                </div>
-                <ul className="divide-y divide-black/5 px-6">
-                  {items.map((product) => (
-                    <li
-                      key={product.id}
-                      className="flex items-start justify-between gap-4 py-4"
-                    >
-                      <div className="flex min-w-0 flex-1 items-start gap-4">
-                        {product.imageUrl ? (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            src={photoSrc(product.imageUrl)}
-                            alt={product.name}
-                            className="h-28 w-28 shrink-0 rounded-2xl bg-cream object-cover sm:h-36 sm:w-36"
-                          />
-                        ) : null}
-                        <div className="min-w-0 pt-1">
-                          <p className="font-medium text-ink">{product.name}</p>
+          </nav>
+
+          <div className="space-y-8">
+            {groups.map(({ category, items }) => {
+              const blush = isBlushCategory(category.id);
+              const photos = items
+                .map((item) => item.imageUrl)
+                .filter(Boolean)
+                .slice(0, 2);
+
+              return (
+                <section
+                  key={category.id}
+                  id={category.id}
+                  className={`scroll-mt-8 overflow-hidden rounded-sm border border-black/5 shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${
+                    blush ? "bg-[#f7e4e6]" : "bg-[#fffaf3]"
+                  }`}
+                >
+                  <header
+                    className={`px-6 pb-2 pt-8 text-center ${
+                      blush ? "bg-[#f3d4d8]" : ""
+                    }`}
+                  >
+                    <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
+                      {category.name}
+                    </h2>
+                    <div className="mx-auto mt-3 h-px w-24 bg-ink/70" />
+                  </header>
+
+                  <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_8.5rem] md:items-start">
+                    <ul>
+                      {items.map((product) => (
+                        <li key={product.id} className="py-2.5">
+                          <div className="flex items-baseline text-ink">
+                            <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
+                              {product.name}
+                            </p>
+                            <span className="menu-dots" />
+                            <p className="shrink-0 text-[15px] font-semibold tabular-nums sm:text-base">
+                              {formatPrice(product.price)}
+                            </p>
+                          </div>
                           {product.description ? (
-                            <p className="mt-0.5 text-sm text-muted">
+                            <p className="mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] text-muted">
                               {product.description}
                             </p>
                           ) : null}
-                        </div>
-                      </div>
-                      <p className="shrink-0 pt-1 font-medium text-cedar">
-                        {formatPrice(product.price)}
-                      </p>
-                    </li>
-                  ))}
-                </ul>
-              </section>
-            ))}
+                        </li>
+                      ))}
+                    </ul>
+
+                    <aside className="hidden justify-center md:flex md:flex-col md:items-center md:gap-4">
+                      {photos.length ? (
+                        photos.map((url) => (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            key={url}
+                            src={photoSrc(url)}
+                            alt=""
+                            className="h-28 w-28 rounded-full object-cover ring-1 ring-ink/10"
+                          />
+                        ))
+                      ) : (
+                        <MenuArt
+                          categoryId={category.id}
+                          className="h-36 w-32 text-ink/80"
+                        />
+                      )}
+                    </aside>
+                  </div>
+
+                  {category.description ? (
+                    <p className="border-t border-ink/10 px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-ink/70">
+                      {category.description}
+                    </p>
+                  ) : null}
+                </section>
+              );
+            })}
           </div>
         </>
       )}
