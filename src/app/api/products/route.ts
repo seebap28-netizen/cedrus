@@ -59,6 +59,8 @@ export async function POST(request: Request) {
     });
     revalidatePath("/");
     revalidatePath("/menu");
+    revalidatePath("/menu/semana");
+    revalidatePath("/menu/domingo");
     revalidatePath("/admin");
     return NextResponse.json(product, {
       status: 201,

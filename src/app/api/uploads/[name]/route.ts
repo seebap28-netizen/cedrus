@@ -24,17 +24,24 @@ export async function GET(
   }
 
   const ext = name.split(".").pop()?.toLowerCase() ?? "";
-  const file = path.join(tmpdir(), "cedrus-uploads", name);
+  const candidates = [
+    path.join(process.cwd(), "public", "uploads", name),
+    path.join(tmpdir(), "cedrus-uploads", name),
+  ];
 
-  try {
-    const data = await readFile(file);
-    return new NextResponse(new Uint8Array(data), {
-      headers: {
-        "Content-Type": TYPES[ext] || "application/octet-stream",
-        "Cache-Control": "public, max-age=31536000, immutable",
-      },
-    });
-  } catch {
-    return NextResponse.json({ error: "No encontrado" }, { status: 404 });
+  for (const file of candidates) {
+    try {
+      const data = await readFile(file);
+      return new NextResponse(new Uint8Array(data), {
+        headers: {
+          "Content-Type": TYPES[ext] || "application/octet-stream",
+          "Cache-Control": "public, max-age=31536000, immutable",
+        },
+      });
+    } catch {
+      // try next location
+    }
   }
+
+  return NextResponse.json({ error: "No encontrado" }, { status: 404 });
 }

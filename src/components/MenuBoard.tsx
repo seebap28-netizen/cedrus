@@ -2,6 +2,11 @@ import { formatPrice } from "@/lib/money";
 import { MENUS, menuPath } from "@/lib/menus";
 import type { Category, MenuId, Product } from "@/lib/types";
 
+function photoSrc(url: string) {
+  const name = url.match(/^\/uploads\/([^/]+)$/)?.[1];
+  return name ? `/api/uploads/${name}` : url;
+}
+
 type Props = {
   categories: Category[];
   products: Product[];
@@ -76,18 +81,18 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   {items.map((product) => (
                     <li
                       key={product.id}
-                      className="flex items-start justify-between gap-4 py-3"
+                      className="flex items-start justify-between gap-4 py-4"
                     >
-                      <div className="flex min-w-0 items-start gap-3">
+                      <div className="flex min-w-0 flex-1 items-start gap-4">
                         {product.imageUrl ? (
                           // eslint-disable-next-line @next/next/no-img-element
                           <img
-                            src={product.imageUrl}
-                            alt=""
-                            className="h-14 w-14 shrink-0 rounded-lg object-cover"
+                            src={photoSrc(product.imageUrl)}
+                            alt={product.name}
+                            className="h-28 w-28 shrink-0 rounded-2xl bg-cream object-cover sm:h-36 sm:w-36"
                           />
                         ) : null}
-                        <div>
+                        <div className="min-w-0 pt-1">
                           <p className="font-medium text-ink">{product.name}</p>
                           {product.description ? (
                             <p className="mt-0.5 text-sm text-muted">
@@ -96,7 +101,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                           ) : null}
                         </div>
                       </div>
-                      <p className="shrink-0 font-medium text-cedar">
+                      <p className="shrink-0 pt-1 font-medium text-cedar">
                         {formatPrice(product.price)}
                       </p>
                     </li>

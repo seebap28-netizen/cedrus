@@ -73,28 +73,41 @@ export async function POST(request: Request) {
   }
 
   const filename = `${crypto.randomUUID()}.${TYPES[type]}`;
+  const buffer = Buffer.from(bytes);
 
   try {
-    if (process.env.BLOB_READ_WRITE_TOKEN) {
-      const blob = await put(`uploads/${filename}`, Buffer.from(bytes), {
-        access: "public",
-        contentType: type,
-        token: process.env.BLOB_READ_WRITE_TOKEN,
-      });
-      return NextResponse.json({ url: blob.url });
+    if (
+      process.env.BLOB_READ_WRITE_TOKEN ||
+      process.env.BLOB_STORE_ID ||
+      process.env.VERCEL
+    ) {
+      try {
+        const blob = await put(`uploads/${filename}`, buffer, {
+          access: "public",
+          contentType: type,
+          addRandomSuffix: false,
+          ...(process.env.BLOB_READ_WRITE_TOKEN
+            ? { token: process.env.BLOB_READ_WRITE_TOKEN }
+            : {}),
+        });
+        return NextResponse.json({ url: blob.url });
+      } catch (error) {
+        if (process.env.BLOB_READ_WRITE_TOKEN || process.env.BLOB_STORE_ID) {
+          throw error;
+        }
+        console.error("Blob no disponible, se guarda en disco", error);
+      }
     }
 
-    if (process.env.VERCEL) {
-      const dir = path.join(tmpdir(), "cedrus-uploads");
+    const dirs = [
+      path.join(process.cwd(), "public", "uploads"),
+      path.join(tmpdir(), "cedrus-uploads"),
+    ];
+    for (const dir of dirs) {
       await mkdir(dir, { recursive: true });
-      await writeFile(path.join(dir, filename), bytes);
-      return NextResponse.json({ url: `/api/uploads/${filename}` });
+      await writeFile(path.join(dir, filename), buffer);
     }
-
-    const dir = path.join(process.cwd(), "public", "uploads");
-    await mkdir(dir, { recursive: true });
-    await writeFile(path.join(dir, filename), bytes);
-    return NextResponse.json({ url: `/uploads/${filename}` });
+    return NextResponse.json({ url: `/api/uploads/${filename}` });
   } catch (error) {
     console.error("No se pudo guardar la foto", error);
     return NextResponse.json(

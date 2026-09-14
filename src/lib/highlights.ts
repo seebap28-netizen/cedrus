@@ -359,7 +359,7 @@ export function homeHighlights(
       category: def.category || (product ? categoryName(product.categoryId) : ""),
       description: def.description || product?.description || "",
       price: product?.price ?? null,
-      imageUrl: def.imageUrl,
+      imageUrl: product?.imageUrl || def.imageUrl,
     };
   });
 }

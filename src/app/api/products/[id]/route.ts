@@ -11,6 +11,8 @@ type Params = { params: Promise<{ id: string }> };
 function refresh() {
   revalidatePath("/");
   revalidatePath("/menu");
+  revalidatePath("/menu/semana");
+  revalidatePath("/menu/domingo");
   revalidatePath("/admin");
 }
 

@@ -100,6 +100,23 @@ export default function ProductsAdminPage() {
         return;
       }
       setForm((current) => ({ ...current, imageUrl: url }));
+      if (editingId) {
+        const response = await fetch(
+          `/api/products/${encodeURIComponent(editingId)}`,
+          {
+            method: "PUT",
+            cache: "no-store",
+            credentials: "same-origin",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ ...form, imageUrl: url }),
+          },
+        );
+        if (!response.ok) {
+          setError("La foto se subió, pero no se pudo guardar en el plato");
+          return;
+        }
+        await load();
+      }
     } catch {
       setError("No se pudo subir la foto");
     } finally {
