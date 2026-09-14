@@ -1,6 +1,6 @@
 import { formatPrice } from "@/lib/money";
 import { MENUS, menuPath } from "@/lib/menus";
-import { isBlushCategory, MenuArt } from "@/components/MenuArt";
+import { isBlushCategory, MenuArt, categoryIcon } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
 
 function photoSrc(url: string) {
@@ -65,6 +65,9 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 href={`#${category.id}`}
                 className="text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
               >
+                <span className="mr-1 normal-case tracking-normal" aria-hidden>
+                  {categoryIcon(category.id)}
+                </span>
                 {category.name}
               </a>
             ))}
@@ -89,7 +92,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   >
                     <MenuArt
                       categoryId={category.id}
-                      className="absolute right-3 top-4 h-[4.5rem] w-16 text-ink/80 md:hidden"
+                      className="absolute right-3 top-4 text-5xl md:hidden"
                     />
                     <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
                       {category.name}
@@ -134,7 +137,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                     <aside className="hidden flex-col items-center justify-start md:flex">
                       <MenuArt
                         categoryId={category.id}
-                        className="h-44 w-40 text-ink/85"
+                        className="text-8xl"
                       />
                     </aside>
                   </div>
