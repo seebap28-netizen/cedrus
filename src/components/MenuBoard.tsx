@@ -68,10 +68,13 @@ export function MenuBoard({ categories, products, menu }: Props) {
               <a
                 key={category.id}
                 href={`#${category.id}`}
-                className="text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
+                className="inline-flex items-center text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
               >
-                <span className="mr-1 inline-flex items-center normal-case tracking-normal" aria-hidden>
-                  <MenuArt categoryId={category.id} className="text-[13px]" />
+                <span className="mr-1.5 inline-flex items-center" aria-hidden>
+                  <MenuArt
+                    categoryId={category.id}
+                    className="h-5 w-5 rounded-full object-cover ring-1 ring-cedar/20"
+                  />
                 </span>
                 {category.name}
               </a>
@@ -94,8 +97,8 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 >
                   <MenuArt
                     categoryId={category.id}
-                    className={`absolute right-3 top-4 text-5xl md:hidden ${
-                      dark ? "text-cream" : "text-ink"
+                    className={`absolute right-3 top-3 h-14 w-14 rounded-full object-cover md:hidden ${
+                      dark ? "ring-1 ring-white/25" : "ring-1 ring-black/10"
                     }`}
                   />
                   <h2
@@ -159,7 +162,9 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   <aside className="hidden flex-col items-center justify-start md:flex">
                     <MenuArt
                       categoryId={category.id}
-                      className={`text-[6.5rem] ${dark ? "text-cream" : "text-ink"}`}
+                      className={`h-36 w-36 rounded-full object-cover ${
+                        dark ? "ring-1 ring-white/25" : "ring-1 ring-black/10"
+                      }`}
                     />
                   </aside>
                 </div>
