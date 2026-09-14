@@ -1,28 +1,35 @@
-const PHOTOS: Record<string, string> = {
-  "cat-desayunos": "/platos/carne-huevo.jpg",
-  "cat-cafeteria": "/platos/cafe-love.jpg",
-  "cat-ensaladas": "/platos/ensalada-camarones.jpg",
-  "cat-bowls": "/platos/pescado-cous-cous.jpg",
-  "cat-platos": "/platos/a-lo-pobre.jpg",
-  "cat-nino": "/platos/pasta.jpg",
-  "cat-sandwichs": "/platos/hamburguesa-cedrus.jpg",
-  "cat-fajitas": "/platos/fajitas-wrap.jpg",
-  "cat-tablas": "/platos/tabla-compartir.jpg",
-  "cat-papas": "/platos/ensalada-papas.jpg",
-  "cat-pasteleria": "/platos/torta.jpg",
-  "cat-heladeria": "/platos/volcan-chocolate.jpg",
-  "cat-tragos": "/platos/coctel-cedrus.jpg",
-  "cat-sour": "/platos/coctel-corazones.jpg",
-  "cat-gin": "/platos/gin-morado.jpg",
-  "cat-mojitos": "/platos/tragos-copa.jpg",
-  "cat-pisco": "/platos/decantador-vino.jpg",
-  "cat-whisky": "/platos/espresso-martini.jpg",
-  "cat-vodka": "/platos/tragos-yellow.jpg",
+type Props = {
+  categoryId: string;
+  className?: string;
 };
 
-export function categoryPhoto(categoryId: string) {
-  return PHOTOS[categoryId] ?? "";
-}
+const ICONS: Record<string, string> = {
+  "cat-desayunos": "🍳",
+  "cat-cafeteria": "☕",
+  "cat-ensaladas": "🥗",
+  "cat-bowls": "🥣",
+  "cat-platos": "🥩",
+  "cat-nino": "🧒",
+  "cat-sandwichs": "🍔",
+  "cat-completos": "🌭",
+  "cat-fajitas": "🌯",
+  "cat-agregados": "🥚",
+  "cat-tablas": "🍖",
+  "cat-papas": "🍟",
+  "cat-pizzas": "🍕",
+  "cat-pasteleria": "🍰",
+  "cat-heladeria": "🍦",
+  "cat-bebidas-jugos": "🥤",
+  "cat-cervezas": "🍺",
+  "cat-schop": "🍻",
+  "cat-tragos": "🍸",
+  "cat-sour": "🍋",
+  "cat-gin": "🫒",
+  "cat-mojitos": "🌿",
+  "cat-pisco": "🍾",
+  "cat-whisky": "🥃",
+  "cat-vodka": "🧊",
+};
 
 const ALCOHOL = new Set([
   "cat-cervezas",
@@ -35,6 +42,18 @@ const ALCOHOL = new Set([
   "cat-whisky",
   "cat-vodka",
 ]);
+
+export function categoryIcon(categoryId: string) {
+  return ICONS[categoryId] ?? "🍽️";
+}
+
+export function MenuArt({ categoryId, className }: Props) {
+  return (
+    <span className={`inline-block select-none leading-none ${className ?? ""}`} aria-hidden>
+      {categoryIcon(categoryId)}
+    </span>
+  );
+}
 
 export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-ensaladas") return "bg-[#e7f4ea]";
