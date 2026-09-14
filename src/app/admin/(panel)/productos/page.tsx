@@ -159,6 +159,26 @@ export default function ProductsAdminPage() {
     }
   }
 
+  async function removePhoto() {
+    const previous = form.imageUrl;
+    setForm((current) => ({ ...current, imageUrl: "" }));
+    if (fileRef.current) fileRef.current.value = "";
+    if (!editingId || !previous) return;
+    const response = await fetch(`/api/products/${encodeURIComponent(editingId)}`, {
+      method: "PUT",
+      cache: "no-store",
+      credentials: "same-origin",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ ...form, imageUrl: "" }),
+    });
+    if (!response.ok) {
+      setForm((current) => ({ ...current, imageUrl: previous }));
+      setError("No se pudo quitar la foto");
+      return;
+    }
+    await load();
+  }
+
   async function remove(id: string) {
     if (!confirm("¿Eliminar este producto?")) return;
     const response = await fetch(`/api/products/${encodeURIComponent(id)}`, {
@@ -173,6 +193,7 @@ export default function ProductsAdminPage() {
       setError(data?.error || "No se pudo eliminar");
       return;
     }
+    if (editingId === id) reset();
     await load();
   }
 
@@ -257,10 +278,7 @@ export default function ProductsAdminPage() {
               <button
                 type="button"
                 className="text-sm text-muted"
-                onClick={() => {
-                  setForm((current) => ({ ...current, imageUrl: "" }));
-                  if (fileRef.current) fileRef.current.value = "";
-                }}
+                onClick={() => void removePhoto()}
               >
                 Quitar foto
               </button>

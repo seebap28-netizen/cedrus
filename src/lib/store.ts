@@ -3,6 +3,7 @@ import path from "path";
 import seedJson from "../../data/store.json";
 import { parseMenus } from "./menus";
 import type { Category, Product, StoreData } from "./types";
+import { deleteUploadIfUnused } from "./uploads";
 
 const dataPath = process.env.VERCEL
   ? path.join("/tmp", "cedrus-store.json")
@@ -123,20 +124,27 @@ export async function updateProduct(
   const store = await ensureStore();
   const index = store.products.findIndex((item) => item.id === id);
   if (index === -1) return null;
+  const previousUrl = store.products[index].imageUrl;
   store.products[index] = {
     ...store.products[index],
     ...input,
     menus: input.menus ? parseMenus(input.menus) : store.products[index].menus,
   };
   await writeStore(store);
+  if (input.imageUrl !== undefined && previousUrl && previousUrl !== store.products[index].imageUrl) {
+    await deleteUploadIfUnused(previousUrl, store.products);
+  }
   return store.products[index];
 }
 
 export async function deleteProduct(id: string): Promise<boolean> {
   const store = await ensureStore();
-  const before = store.products.length;
+  const product = store.products.find((item) => item.id === id);
+  if (!product) return false;
   store.products = store.products.filter((item) => item.id !== id);
-  if (store.products.length === before) return false;
   await writeStore(store);
+  if (product.imageUrl) {
+    await deleteUploadIfUnused(product.imageUrl, store.products);
+  }
   return true;
 }
