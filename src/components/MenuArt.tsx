@@ -56,6 +56,7 @@ export function MenuArt({ categoryId, className }: Props) {
 }
 
 export function categorySheetClass(categoryId: string) {
+  if (categoryId === "cat-desayunos") return "bg-[#fbf3d4]";
   if (categoryId === "cat-ensaladas") return "bg-[#e7f4ea]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
@@ -69,6 +70,7 @@ export function categorySheetClass(categoryId: string) {
 }
 
 export function categoryHeaderClass(categoryId: string) {
+  if (categoryId === "cat-desayunos") return "bg-[#f6e9b8]";
   if (categoryId === "cat-ensaladas") return "bg-[#d7eadc]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
