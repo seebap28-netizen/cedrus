@@ -78,13 +78,23 @@ export function MenuBoard({ categories, products, menu }: Props) {
                       key={product.id}
                       className="flex items-start justify-between gap-4 py-3"
                     >
-                      <div>
-                        <p className="font-medium text-ink">{product.name}</p>
-                        {product.description ? (
-                          <p className="mt-0.5 text-sm text-muted">
-                            {product.description}
-                          </p>
+                      <div className="flex min-w-0 items-start gap-3">
+                        {product.imageUrl ? (
+                          // eslint-disable-next-line @next/next/no-img-element
+                          <img
+                            src={product.imageUrl}
+                            alt=""
+                            className="h-14 w-14 shrink-0 rounded-lg object-cover"
+                          />
                         ) : null}
+                        <div>
+                          <p className="font-medium text-ink">{product.name}</p>
+                          {product.description ? (
+                            <p className="mt-0.5 text-sm text-muted">
+                              {product.description}
+                            </p>
+                          ) : null}
+                        </div>
                       </div>
                       <p className="shrink-0 font-medium text-cedar">
                         {formatPrice(product.price)}

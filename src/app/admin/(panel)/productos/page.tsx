@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useEffect, useRef, useState } from "react";
+import { ChangeEvent, FormEvent, useEffect, useRef, useState } from "react";
 import { formatPrice } from "@/lib/money";
 import { MENUS, menusLabel, parseMenus } from "@/lib/menus";
 import type { Category, MenuId, Product } from "@/lib/types";
@@ -23,7 +23,9 @@ export default function ProductsAdminPage() {
   const [editingId, setEditingId] = useState<string | null>(null);
   const [error, setError] = useState("");
   const [loading, setLoading] = useState(false);
+  const [uploading, setUploading] = useState(false);
   const formRef = useRef<HTMLFormElement>(null);
+  const fileRef = useRef<HTMLInputElement>(null);
 
   async function load() {
     try {
@@ -72,6 +74,37 @@ export default function ProductsAdminPage() {
       categoryId: categories[0]?.id || "",
     });
     setError("");
+    if (fileRef.current) fileRef.current.value = "";
+  }
+
+  async function onFile(event: ChangeEvent<HTMLInputElement>) {
+    const file = event.target.files?.[0];
+    if (!file) return;
+    setUploading(true);
+    setError("");
+    try {
+      const data = new FormData();
+      data.append("file", file);
+      const response = await fetch("/api/uploads", {
+        method: "POST",
+        credentials: "same-origin",
+        body: data,
+      });
+      const payload = (await response.json().catch(() => null)) as {
+        url?: string;
+        error?: string;
+      } | null;
+      const url = payload?.url;
+      if (!response.ok || !url) {
+        setError(payload?.error || "No se pudo subir la foto");
+        return;
+      }
+      setForm((current) => ({ ...current, imageUrl: url }));
+    } catch {
+      setError("No se pudo subir la foto");
+    } finally {
+      setUploading(false);
+    }
   }
 
   async function onSubmit(event: FormEvent) {
@@ -120,7 +153,7 @@ export default function ProductsAdminPage() {
       error?: string;
     } | null;
     if (!response.ok) {
-      setError(data.error || "No se pudo eliminar");
+      setError(data?.error || "No se pudo eliminar");
       return;
     }
     await load();
@@ -181,17 +214,42 @@ export default function ProductsAdminPage() {
             className="mt-1 w-full rounded-lg border border-black/10 px-3 py-2"
           />
         </label>
-        <label className="text-sm">
-          URL de imagen
+        <div className="text-sm md:col-span-2">
+          Foto del plato
           <input
-            value={form.imageUrl}
-            onChange={(event) =>
-              setForm({ ...form, imageUrl: event.target.value })
-            }
-            className="mt-1 w-full rounded-lg border border-black/10 px-3 py-2"
-            placeholder="https://..."
+            ref={fileRef}
+            type="file"
+            accept="image/jpeg,image/png,image/webp,image/gif"
+            onChange={(event) => void onFile(event)}
+            disabled={uploading || loading}
+            className="mt-1 block w-full text-sm file:mr-3 file:rounded-full file:border-0 file:bg-cedar file:px-4 file:py-2 file:text-cream"
           />
-        </label>
+          <p className="mt-1 text-muted">
+            {uploading
+              ? "Subiendo foto…"
+              : "Elegí una imagen desde el computador (JPG, PNG, WEBP o GIF, hasta 4 MB)."}
+          </p>
+          {form.imageUrl ? (
+            <div className="mt-3 flex items-end gap-4">
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img
+                src={form.imageUrl}
+                alt="Vista previa"
+                className="h-24 w-24 rounded-xl object-cover"
+              />
+              <button
+                type="button"
+                className="text-sm text-muted"
+                onClick={() => {
+                  setForm((current) => ({ ...current, imageUrl: "" }));
+                  if (fileRef.current) fileRef.current.value = "";
+                }}
+              >
+                Quitar foto
+              </button>
+            </div>
+          ) : null}
+        </div>
         <label className="text-sm md:col-span-2">
           Descripción
           <textarea
@@ -247,7 +305,7 @@ export default function ProductsAdminPage() {
         <div className="flex gap-3 md:col-span-2">
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || uploading}
             className="rounded-full bg-cedar px-5 py-2 text-sm text-cream"
           >
             {editingId ? "Guardar cambios" : "Crear producto"}
@@ -276,8 +334,20 @@ export default function ProductsAdminPage() {
             {items.map((item) => (
               <tr key={item.id} className="border-t border-black/5">
                 <td className="px-4 py-3">
-                  <p className="font-medium">{item.name}</p>
-                  <p className="text-muted">{item.description}</p>
+                  <div className="flex items-start gap-3">
+                    {item.imageUrl ? (
+                      // eslint-disable-next-line @next/next/no-img-element
+                      <img
+                        src={item.imageUrl}
+                        alt=""
+                        className="h-12 w-12 shrink-0 rounded-lg object-cover"
+                      />
+                    ) : null}
+                    <div>
+                      <p className="font-medium">{item.name}</p>
+                      <p className="text-muted">{item.description}</p>
+                    </div>
+                  </div>
                 </td>
                 <td className="px-4 py-3">{categoryName(item.categoryId)}</td>
                 <td className="px-4 py-3">{menusLabel(parseMenus(item.menus))}</td>
