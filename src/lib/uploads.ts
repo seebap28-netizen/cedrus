@@ -13,8 +13,7 @@ export function isManagedUpload(url: string) {
   if (!url || url.startsWith("/platos/")) return false;
   if (url.startsWith("/api/uploads/") || url.startsWith("/uploads/")) return true;
   try {
-    const host = new URL(url).hostname;
-    return host.endsWith("blob.vercel-storage.com") || host.endsWith("public.blob.vercel-storage.com");
+    return new URL(url).hostname.includes("blob.vercel-storage.com");
   } catch {
     return false;
   }

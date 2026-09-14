@@ -169,7 +169,7 @@ export default function ProductsAdminPage() {
       cache: "no-store",
       credentials: "same-origin",
       headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ ...form, imageUrl: "" }),
+      body: JSON.stringify({ imageUrl: "" }),
     });
     if (!response.ok) {
       setForm((current) => ({ ...current, imageUrl: previous }));

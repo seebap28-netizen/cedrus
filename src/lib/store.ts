@@ -1,16 +1,30 @@
 import { promises as fs } from "fs";
 import path from "path";
+import { get, put } from "@vercel/blob";
 import seedJson from "../../data/store.json";
 import { parseMenus } from "./menus";
 import type { Category, Product, StoreData } from "./types";
 import { deleteUploadIfUnused } from "./uploads";
 
-const dataPath = process.env.VERCEL
-  ? path.join("/tmp", "cedrus-store.json")
-  : path.join(process.cwd(), "data", "store.json");
+const STORE_BLOB = "cedrus-store.json";
+const dataPath = path.join(process.cwd(), "data", "store.json");
 const seed = seedJson as StoreData;
 
 let cache: StoreData | null = null;
+
+function blobAuth() {
+  return process.env.BLOB_READ_WRITE_TOKEN
+    ? { token: process.env.BLOB_READ_WRITE_TOKEN }
+    : {};
+}
+
+function useRemoteStore() {
+  return Boolean(
+    process.env.VERCEL ||
+      process.env.BLOB_READ_WRITE_TOKEN ||
+      process.env.BLOB_STORE_ID,
+  );
+}
 
 function normalize(data: StoreData): StoreData {
   return {
@@ -22,7 +36,13 @@ function normalize(data: StoreData): StoreData {
   };
 }
 
-async function persist(data: StoreData) {
+function validStore(data: unknown): data is StoreData {
+  if (!data || typeof data !== "object") return false;
+  const parsed = data as StoreData;
+  return Array.isArray(parsed.categories) && Array.isArray(parsed.products);
+}
+
+async function persistLocal(data: StoreData) {
   await fs.mkdir(path.dirname(dataPath), { recursive: true });
   const payload = JSON.stringify(data, null, 2);
   const tempPath = `${dataPath}.${process.pid}.tmp`;
@@ -31,31 +51,71 @@ async function persist(data: StoreData) {
   await fs.unlink(tempPath).catch(() => undefined);
 }
 
+async function readBlobStore(): Promise<StoreData | null> {
+  try {
+    const result = await get(STORE_BLOB, {
+      access: "public",
+      useCache: false,
+      ...blobAuth(),
+    });
+    if (result.statusCode !== 200 || !result.stream) return null;
+    const parsed = JSON.parse(await new Response(result.stream).text()) as unknown;
+    return validStore(parsed) ? normalize(parsed) : null;
+  } catch {
+    return null;
+  }
+}
+
+async function writeBlobStore(data: StoreData) {
+  await put(STORE_BLOB, JSON.stringify(data), {
+    access: "public",
+    addRandomSuffix: false,
+    allowOverwrite: true,
+    contentType: "application/json",
+    cacheControlMaxAge: 0,
+    ...blobAuth(),
+  });
+}
+
 async function ensureStore(): Promise<StoreData> {
+  if (useRemoteStore()) {
+    const remote = await readBlobStore();
+    if (remote) return remote;
+    const initial = normalize(structuredClone(seed));
+    try {
+      await writeBlobStore(initial);
+    } catch (error) {
+      console.error("No se pudo crear el menú remoto", error);
+    }
+    return initial;
+  }
+
   if (cache) return cache;
 
   try {
     const raw = await fs.readFile(dataPath, "utf8");
-    const parsed = JSON.parse(raw) as StoreData;
-    if (!Array.isArray(parsed.categories) || !Array.isArray(parsed.products)) {
-      throw new Error("invalid store");
-    }
+    const parsed = JSON.parse(raw) as unknown;
+    if (!validStore(parsed)) throw new Error("invalid store");
     cache = normalize(parsed);
     return cache;
   } catch {
     cache = normalize(structuredClone(seed));
     try {
-      await persist(cache);
+      await persistLocal(cache);
     } catch {
-      // Vercel filesystem can be read-only outside /tmp
+      // ignore
     }
     return cache;
   }
 }
 
 async function writeStore(data: StoreData) {
+  if (useRemoteStore()) {
+    await writeBlobStore(data);
+    return;
+  }
   cache = data;
-  await persist(data);
+  await persistLocal(data);
 }
 
 export async function getStore() {
