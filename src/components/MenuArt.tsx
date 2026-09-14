@@ -17,7 +17,7 @@ const PHOTOS: Record<string, string> = {
   "cat-tablas": "/platos/tabla-compartir.jpg",
   "cat-papas": "/platos/ia-papas.png",
   "cat-pizzas": "/platos/ia-pizzas.png",
-  "cat-pasteleria": "/platos/torta.jpg",
+  "cat-pasteleria": "/platos/torta-lazos.jpg",
   "cat-heladeria": "/platos/ia-helado.png",
   "cat-bebidas-jugos": "/platos/ia-jugos.png",
   "cat-cervezas": "/platos/ia-cervezas.png",
