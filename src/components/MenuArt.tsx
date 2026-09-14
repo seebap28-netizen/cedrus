@@ -7,7 +7,7 @@ const PHOTOS: Record<string, string> = {
   "cat-desayunos": "/platos/ia-desayunos.png",
   "cat-cafeteria": "/platos/cafe-love.jpg",
   "cat-ensaladas": "/platos/ensalada-camarones.jpg",
-  "cat-bowls": "/platos/pescado-cous-cous.jpg",
+  "cat-bowls": "/platos/ia-bowls.png",
   "cat-platos": "/platos/a-lo-pobre.jpg",
   "cat-nino": "/platos/ia-nino.png",
   "cat-sandwichs": "/platos/hamburguesa-cedrus.jpg",
