@@ -44,9 +44,6 @@ function LoginForm() {
       >
         <p className="text-xs uppercase tracking-[0.3em] text-gold">Cedrus</p>
         <h1 className="font-serif mt-2 text-4xl text-cedar">Ingresar al panel</h1>
-        <p className="mt-2 text-sm text-muted">
-          Contraseña inicial: <code>cedrus123</code>
-        </p>
         <label className="mt-6 block text-sm">
           Contraseña
           <input

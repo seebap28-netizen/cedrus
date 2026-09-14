@@ -203,7 +203,7 @@ export default function ProductsAdminPage() {
           </select>
         </label>
         <label className="text-sm">
-          Precio (ARS)
+          Precio
           <input
             type="number"
             min={0}
