@@ -58,7 +58,7 @@ async function readBlobStore(): Promise<StoreData | null> {
       useCache: false,
       ...blobAuth(),
     });
-    if (result.statusCode !== 200 || !result.stream) return null;
+    if (!result || result.statusCode !== 200 || !result.stream) return null;
     const parsed = JSON.parse(await new Response(result.stream).text()) as unknown;
     return validStore(parsed) ? normalize(parsed) : null;
   } catch {
