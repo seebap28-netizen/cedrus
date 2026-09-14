@@ -285,6 +285,62 @@ const defs: Array<{
     description: "Tragos de la casa, para celebrar.",
     imageUrl: "/platos/espresso-martini.jpg",
   },
+  {
+    id: "decantador-vino",
+    name: "Vinos",
+    category: "Tragos",
+    description: "Vinos y tragos de la casa.",
+    imageUrl: "/platos/decantador-vino.jpg",
+  },
+  {
+    id: "ensalada-papas",
+    name: "Ensaladas",
+    category: "Ensaladas",
+    description: "Ensaladas de la casa, para compartir.",
+    imageUrl: "/platos/ensalada-papas.jpg",
+  },
+  {
+    id: "carne-huevo",
+    name: "Platos de la casa",
+    category: "Platos",
+    description: "Platos de la casa, según el día.",
+    imageUrl: "/platos/carne-huevo.jpg",
+  },
+  {
+    id: "pescado-cous-cous",
+    name: "Pescado",
+    category: "Platos",
+    description: "Platos de la casa, según el día.",
+    imageUrl: "/platos/pescado-cous-cous.jpg",
+  },
+  {
+    id: "ensalada-camarones",
+    name: "Ensalada de camarones",
+    category: "Ensaladas",
+    description: "Ensaladas de la casa.",
+    imageUrl: "/platos/ensalada-camarones.jpg",
+  },
+  {
+    id: "estofado-pure",
+    name: "Estofado",
+    category: "Platos",
+    description: "Platos de la casa, según el día.",
+    imageUrl: "/platos/estofado-pure.jpg",
+  },
+  {
+    id: "souffle-ensalada",
+    name: "Al horno",
+    category: "Platos",
+    description: "Platos de la casa, según el día.",
+    imageUrl: "/platos/souffle-ensalada.jpg",
+  },
+  {
+    id: "fajitas-wrap",
+    name: "Fajitas",
+    category: "Fajitas",
+    description: "Fajitas de la casa.",
+    imageUrl: "/platos/fajitas-wrap.jpg",
+  },
 ];
 
 export function homeHighlights(
