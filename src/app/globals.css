@@ -42,3 +42,10 @@ body {
   margin: 0 0.55rem 0.28em;
   border-bottom: 1px dotted color-mix(in srgb, var(--ink) 42%, transparent);
 }
+
+.menu-dots-light {
+  flex: 1 1 auto;
+  min-width: 1.25rem;
+  margin: 0 0.55rem 0.28em;
+  border-bottom: 1px dotted color-mix(in srgb, var(--cream) 50%, transparent);
+}

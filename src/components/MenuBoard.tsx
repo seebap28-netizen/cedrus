@@ -4,6 +4,7 @@ import {
   categoryHeaderClass,
   categoryIcon,
   categorySheetClass,
+  isAlcoholCategory,
   MenuArt,
 } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
@@ -79,11 +80,15 @@ export function MenuBoard({ categories, products, menu }: Props) {
           </nav>
 
           <div className="space-y-8">
-            {groups.map(({ category, items }) => (
+            {groups.map(({ category, items }) => {
+              const alcohol = isAlcoholCategory(category.id);
+              return (
               <section
                 key={category.id}
                 id={category.id}
-                className={`scroll-mt-8 overflow-hidden rounded-sm border border-black/5 shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${categorySheetClass(category.id)}`}
+                className={`scroll-mt-8 overflow-hidden rounded-sm border shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${
+                  alcohol ? "border-white/10" : "border-black/5"
+                } ${categorySheetClass(category.id)}`}
               >
                 <header
                   className={`relative px-6 pb-2 pt-8 text-center ${categoryHeaderClass(category.id)}`}
@@ -92,10 +97,18 @@ export function MenuBoard({ categories, products, menu }: Props) {
                     categoryId={category.id}
                     className="absolute right-3 top-4 text-5xl md:hidden"
                   />
-                  <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
+                  <h2
+                    className={`font-serif text-4xl uppercase tracking-[0.18em] ${
+                      alcohol ? "text-cream" : "text-ink"
+                    }`}
+                  >
                     {category.name}
                   </h2>
-                  <div className="mx-auto mt-3 h-px w-24 bg-ink/70" />
+                  <div
+                    className={`mx-auto mt-3 h-px w-24 ${
+                      alcohol ? "bg-cream/70" : "bg-ink/70"
+                    }`}
+                  />
                 </header>
 
                 <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_10rem] md:items-start">
@@ -112,17 +125,27 @@ export function MenuBoard({ categories, products, menu }: Props) {
                             />
                           ) : null}
                           <div className="min-w-0 flex-1">
-                            <div className="flex items-baseline text-ink">
+                            <div
+                              className={`flex items-baseline ${
+                                alcohol ? "text-cream" : "text-ink"
+                              }`}
+                            >
                               <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
                                 {product.name}
                               </p>
-                              <span className="menu-dots" />
+                              <span
+                                className={alcohol ? "menu-dots-light" : "menu-dots"}
+                              />
                               <p className="shrink-0 text-[15px] font-semibold tabular-nums sm:text-base">
                                 {formatPrice(product.price)}
                               </p>
                             </div>
                             {product.description ? (
-                              <p className="mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] text-muted">
+                              <p
+                                className={`mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] ${
+                                  alcohol ? "text-cream/65" : "text-muted"
+                                }`}
+                              >
                                 {product.description}
                               </p>
                             ) : null}
@@ -138,12 +161,19 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 </div>
 
                 {category.description ? (
-                  <p className="border-t border-ink/10 px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-ink/70">
+                  <p
+                    className={`border-t px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] ${
+                      alcohol
+                        ? "border-white/15 text-cream/70"
+                        : "border-ink/10 text-ink/70"
+                    }`}
+                  >
                     {category.description}
                   </p>
                 ) : null}
               </section>
-            ))}
+              );
+            })}
           </div>
         </>
       )}

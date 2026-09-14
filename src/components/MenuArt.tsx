@@ -55,6 +55,10 @@ export function MenuArt({ categoryId, className }: Props) {
   );
 }
 
+export function isAlcoholCategory(categoryId: string) {
+  return ALCOHOL.has(categoryId);
+}
+
 export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-desayunos") return "bg-[#fbf3d4]";
   if (categoryId === "cat-cafeteria") return "bg-[#fde8d6]";
@@ -66,7 +70,11 @@ export function categorySheetClass(categoryId: string) {
   }
   if (categoryId === "cat-fajitas") return "bg-[#f8dcd8]";
   if (categoryId === "cat-agregados") return "bg-[#e8d5a0]";
-  if (ALCOHOL.has(categoryId)) return "bg-white";
+  if (categoryId === "cat-tablas") return "bg-[#d4b896]";
+  if (categoryId === "cat-papas") return "bg-[#f5d04a]";
+  if (categoryId === "cat-pizzas") return "bg-[#f6d4cf]";
+  if (categoryId === "cat-bebidas-jugos") return "bg-[#e4c9d2]";
+  if (ALCOHOL.has(categoryId)) return "bg-black";
   if (
     categoryId === "cat-pasteleria" ||
     categoryId === "cat-heladeria" ||
@@ -88,7 +96,11 @@ export function categoryHeaderClass(categoryId: string) {
   }
   if (categoryId === "cat-fajitas") return "bg-[#e8b8b2]";
   if (categoryId === "cat-agregados") return "bg-[#c9a85c]";
-  if (ALCOHOL.has(categoryId)) return "bg-white";
+  if (categoryId === "cat-tablas") return "bg-[#b08968]";
+  if (categoryId === "cat-papas") return "bg-[#e6b800]";
+  if (categoryId === "cat-pizzas") return "bg-[#e5b3ad]";
+  if (categoryId === "cat-bebidas-jugos") return "bg-[#c47a8a]";
+  if (ALCOHOL.has(categoryId)) return "bg-black";
   if (
     categoryId === "cat-pasteleria" ||
     categoryId === "cat-heladeria" ||
