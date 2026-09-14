@@ -60,6 +60,7 @@ export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-cafeteria") return "bg-[#fde8d6]";
   if (categoryId === "cat-ensaladas") return "bg-[#e7f4ea]";
   if (categoryId === "cat-bowls") return "bg-[#e8d7b8]";
+  if (categoryId === "cat-platos") return "bg-[#e4d0b8]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
@@ -76,6 +77,7 @@ export function categoryHeaderClass(categoryId: string) {
   if (categoryId === "cat-cafeteria") return "bg-[#f6d4b4]";
   if (categoryId === "cat-ensaladas") return "bg-[#d7eadc]";
   if (categoryId === "cat-bowls") return "bg-[#d9c49a]";
+  if (categoryId === "cat-platos") return "bg-[#cbb193]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
