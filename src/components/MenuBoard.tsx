@@ -1,6 +1,6 @@
 import { formatPrice } from "@/lib/money";
 import { MENUS, menuPath } from "@/lib/menus";
-import { isBlushCategory, MenuArt, categoryIcon } from "@/components/MenuArt";
+import { categoryHeaderClass, categoryPhoto, categorySheetClass } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
 
 function photoSrc(url: string) {
@@ -65,9 +65,6 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 href={`#${category.id}`}
                 className="text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
               >
-                <span className="mr-1 normal-case tracking-normal" aria-hidden>
-                  {categoryIcon(category.id)}
-                </span>
                 {category.name}
               </a>
             ))}
@@ -75,72 +72,74 @@ export function MenuBoard({ categories, products, menu }: Props) {
 
           <div className="space-y-8">
             {groups.map(({ category, items }) => {
-              const blush = isBlushCategory(category.id);
+              const sheet = categorySheetClass(category.id);
+              const cover = categoryPhoto(category.id);
 
               return (
                 <section
                   key={category.id}
                   id={category.id}
-                  className={`scroll-mt-8 overflow-hidden rounded-sm border border-black/5 shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${
-                    blush ? "bg-[#f7e4e6]" : "bg-[#fffaf3]"
-                  }`}
+                  className={`scroll-mt-8 overflow-hidden rounded-sm border border-black/5 shadow-[0_8px_30px_rgba(28,58,46,0.06)] ${sheet}`}
                 >
-                  <header
-                    className={`relative px-6 pb-2 pt-8 text-center ${
-                      blush ? "bg-[#f3d4d8]" : ""
-                    }`}
-                  >
-                    <MenuArt
-                      categoryId={category.id}
-                      className="absolute right-3 top-4 text-5xl md:hidden"
-                    />
-                    <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
-                      {category.name}
-                    </h2>
-                    <div className="mx-auto mt-3 h-px w-24 bg-ink/70" />
-                  </header>
-
-                  <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_10rem] md:items-start">
-                    <ul>
-                      {items.map((product) => (
-                        <li key={product.id} className="py-2.5">
-                          <div className="flex items-start gap-3">
-                            {product.imageUrl ? (
-                              // eslint-disable-next-line @next/next/no-img-element
-                              <img
-                                src={photoSrc(product.imageUrl)}
-                                alt=""
-                                className="mt-0.5 h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-ink/10"
-                              />
-                            ) : null}
-                            <div className="min-w-0 flex-1">
-                          <div className="flex items-baseline text-ink">
-                            <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
-                              {product.name}
-                            </p>
-                            <span className="menu-dots" />
-                            <p className="shrink-0 text-[15px] font-semibold tabular-nums sm:text-base">
-                              {formatPrice(product.price)}
-                            </p>
-                          </div>
-                          {product.description ? (
-                            <p className="mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] text-muted">
-                              {product.description}
-                            </p>
-                          ) : null}
-                            </div>
-                          </div>
-                        </li>
-                      ))}
-                    </ul>
-
-                    <aside className="hidden flex-col items-center justify-start md:flex">
-                      <MenuArt
-                        categoryId={category.id}
-                        className="text-8xl"
+                  {cover ? (
+                    <header className="relative h-44 sm:h-56">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img
+                        src={cover}
+                        alt={category.name}
+                        className="h-full w-full object-cover"
                       />
-                    </aside>
-                  </div>
+                      <div className="absolute inset-0 bg-cedar-deep/50" />
+                      <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+                        <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-cream sm:text-5xl">
+                          {category.name}
+                        </h2>
+                        <div className="mt-3 h-px w-24 bg-cream/80" />
+                      </div>
+                    </header>
+                  ) : (
+                    <header
+                      className={`px-6 pb-2 pt-8 text-center ${categoryHeaderClass(category.id)}`}
+                    >
+                      <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
+                        {category.name}
+                      </h2>
+                      <div className="mx-auto mt-3 h-px w-24 bg-ink/70" />
+                    </header>
+                  )}
+
+                  <ul className="px-6 py-8">
+                    {items.map((product) => (
+                      <li key={product.id} className="py-2.5">
+                        <div className="flex items-start gap-3">
+                          {product.imageUrl ? (
+                            // eslint-disable-next-line @next/next/no-img-element
+                            <img
+                              src={photoSrc(product.imageUrl)}
+                              alt=""
+                              className="mt-0.5 h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-ink/10"
+                            />
+                          ) : null}
+                          <div className="min-w-0 flex-1">
+                            <div className="flex items-baseline text-ink">
+                              <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
+                                {product.name}
+                              </p>
+                              <span className="menu-dots" />
+                              <p className="shrink-0 text-[15px] font-semibold tabular-nums sm:text-base">
+                                {formatPrice(product.price)}
+                              </p>
+                            </div>
+                            {product.description ? (
+                              <p className="mt-0.5 max-w-[36rem] text-[11px] uppercase leading-relaxed tracking-[0.06em] text-muted">
+                                {product.description}
+                              </p>
+                            ) : null}
+                          </div>
+                        </div>
+                      </li>
+                    ))}
+                  </ul>
 
                   {category.description ? (
                     <p className="border-t border-ink/10 px-6 py-4 text-center text-[11px] font-medium uppercase tracking-[0.14em] text-ink/70">
