@@ -61,6 +61,10 @@ export function categorySheetClass(categoryId: string) {
   if (categoryId === "cat-ensaladas") return "bg-[#e7f4ea]";
   if (categoryId === "cat-bowls") return "bg-[#e8d7b8]";
   if (categoryId === "cat-platos") return "bg-[#e4d0b8]";
+  if (categoryId === "cat-sandwichs" || categoryId === "cat-completos") {
+    return "bg-[#f3e3a6]";
+  }
+  if (categoryId === "cat-fajitas") return "bg-[#f8dcd8]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
@@ -78,6 +82,10 @@ export function categoryHeaderClass(categoryId: string) {
   if (categoryId === "cat-ensaladas") return "bg-[#d7eadc]";
   if (categoryId === "cat-bowls") return "bg-[#d9c49a]";
   if (categoryId === "cat-platos") return "bg-[#cbb193]";
+  if (categoryId === "cat-sandwichs" || categoryId === "cat-completos") {
+    return "bg-[#e6ce6a]";
+  }
+  if (categoryId === "cat-fajitas") return "bg-[#e8b8b2]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
