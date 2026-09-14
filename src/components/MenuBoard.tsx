@@ -73,10 +73,6 @@ export function MenuBoard({ categories, products, menu }: Props) {
           <div className="space-y-8">
             {groups.map(({ category, items }) => {
               const blush = isBlushCategory(category.id);
-              const photos = items
-                .map((item) => item.imageUrl)
-                .filter(Boolean)
-                .slice(0, 2);
 
               return (
                 <section
@@ -87,10 +83,14 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   }`}
                 >
                   <header
-                    className={`px-6 pb-2 pt-8 text-center ${
+                    className={`relative px-6 pb-2 pt-8 text-center ${
                       blush ? "bg-[#f3d4d8]" : ""
                     }`}
                   >
+                    <MenuArt
+                      categoryId={category.id}
+                      className="absolute right-3 top-5 h-16 w-14 text-ink/75 md:hidden"
+                    />
                     <h2 className="font-serif text-4xl uppercase tracking-[0.18em] text-ink">
                       {category.name}
                     </h2>
@@ -101,6 +101,16 @@ export function MenuBoard({ categories, products, menu }: Props) {
                     <ul>
                       {items.map((product) => (
                         <li key={product.id} className="py-2.5">
+                          <div className="flex items-start gap-3">
+                            {product.imageUrl ? (
+                              // eslint-disable-next-line @next/next/no-img-element
+                              <img
+                                src={photoSrc(product.imageUrl)}
+                                alt=""
+                                className="mt-0.5 h-10 w-10 shrink-0 rounded-full object-cover ring-1 ring-ink/10"
+                              />
+                            ) : null}
+                            <div className="min-w-0 flex-1">
                           <div className="flex items-baseline text-ink">
                             <p className="max-w-[75%] text-[15px] font-semibold uppercase tracking-[0.04em] sm:text-base">
                               {product.name}
@@ -115,27 +125,17 @@ export function MenuBoard({ categories, products, menu }: Props) {
                               {product.description}
                             </p>
                           ) : null}
+                            </div>
+                          </div>
                         </li>
                       ))}
                     </ul>
 
-                    <aside className="hidden justify-center md:flex md:flex-col md:items-center md:gap-4">
-                      {photos.length ? (
-                        photos.map((url) => (
-                          // eslint-disable-next-line @next/next/no-img-element
-                          <img
-                            key={url}
-                            src={photoSrc(url)}
-                            alt=""
-                            className="h-28 w-28 rounded-full object-cover ring-1 ring-ink/10"
-                          />
-                        ))
-                      ) : (
-                        <MenuArt
-                          categoryId={category.id}
-                          className="h-36 w-32 text-ink/80"
-                        />
-                      )}
+                    <aside className="hidden flex-col items-center justify-start md:flex">
+                      <MenuArt
+                        categoryId={category.id}
+                        className="h-36 w-32 text-ink/80"
+                      />
                     </aside>
                   </div>
 
