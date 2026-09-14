@@ -65,6 +65,7 @@ export function categorySheetClass(categoryId: string) {
     return "bg-[#f3e3a6]";
   }
   if (categoryId === "cat-fajitas") return "bg-[#f8dcd8]";
+  if (categoryId === "cat-agregados") return "bg-[#e8d5a0]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
@@ -86,6 +87,7 @@ export function categoryHeaderClass(categoryId: string) {
     return "bg-[#e6ce6a]";
   }
   if (categoryId === "cat-fajitas") return "bg-[#e8b8b2]";
+  if (categoryId === "cat-agregados") return "bg-[#c9a85c]";
   if (ALCOHOL.has(categoryId)) return "bg-white";
   if (
     categoryId === "cat-pasteleria" ||
