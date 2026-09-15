@@ -1,5 +1,6 @@
-export const contactInbox =
-  process.env.CONTACT_EMAIL?.trim() || "cedrusrestaurantycafe@gmail.com";
+import { site } from "@/lib/site";
+
+export const contactInbox = site.email;
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
@@ -36,53 +37,25 @@ export async function sendContactMessage(input: {
   message: string;
 }) {
   const resendKey = process.env.RESEND_API_KEY?.trim();
-  if (resendKey) {
-    const response = await fetch("https://api.resend.com/emails", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${resendKey}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        from: process.env.CONTACT_FROM?.trim() || "Cedrus <beth.t@example.com>",
-        to: [contactInbox],
-        reply_to: input.email,
-        subject: `Mensaje de ${input.name} — Cedrus`,
-        text: `Nombre: ${input.name}\nEmail: ${input.email}\n\n${input.message}`,
-      }),
-    });
-    if (!response.ok) {
-      throw new Error(await response.text());
-    }
-    return;
+  if (!resendKey) {
+    throw new Error("NO_RESEND");
   }
 
-  const response = await fetch(
-    `https://formsubmit.co/ajax/${encodeURIComponent(contactInbox)}`,
-    {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Accept: "application/json",
-      },
-      body: JSON.stringify({
-        name: input.name,
-        email: input.email,
-        message: input.message,
-        _subject: `Mensaje de ${input.name} — Cedrus`,
-        _template: "table",
-        _captcha: "false",
-        _replyto: input.email,
-      }),
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
+    headers: {
+      Authorization: `Bearer ${resendKey}`,
+      "Content-Type": "application/json",
     },
-  );
-
-  const payload = (await response.json().catch(() => null)) as {
-    success?: string | boolean;
-    message?: string;
-  } | null;
-
-  if (!response.ok || payload?.success === false) {
-    throw new Error(payload?.message || "No se pudo enviar el mensaje.");
+    body: JSON.stringify({
+      from: process.env.CONTACT_FROM?.trim() || "Cedrus <beth.t@example.com>",
+      to: [contactInbox],
+      reply_to: input.email,
+      subject: `Mensaje de ${input.name} — Cedrus`,
+      text: `Nombre: ${input.name}\nEmail: ${input.email}\n\n${input.message}`,
+    }),
+  });
+  if (!response.ok) {
+    throw new Error(await response.text());
   }
 }

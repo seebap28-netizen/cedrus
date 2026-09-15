@@ -8,6 +8,43 @@ export function ContactForm() {
   const [sending, setSending] = useState(false);
   const [error, setError] = useState("");
 
+  async function sendWithFormSubmit(input: {
+    name: string;
+    email: string;
+    message: string;
+  }) {
+    const response = await fetch(
+      `https://formsubmit.co/ajax/${encodeURIComponent(site.email)}`,
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: input.name,
+          email: input.email,
+          message: input.message,
+          _subject: `Mensaje de ${input.name} — Cedrus`,
+          _template: "table",
+          _captcha: "false",
+          _replyto: input.email,
+        }),
+      },
+    );
+    const payload = (await response.json().catch(() => null)) as {
+      success?: string | boolean;
+      message?: string;
+    } | null;
+    const ok =
+      response.ok && payload?.success !== false && payload?.success !== "false";
+    if (!ok) {
+      throw new Error(
+        payload?.message || "No se pudo enviar el mensaje. Probá de nuevo.",
+      );
+    }
+  }
+
   async function onSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
     setError("");
@@ -15,24 +52,38 @@ export function ContactForm() {
 
     const form = event.currentTarget;
     const data = new FormData(form);
+    const payload = {
+      name: data.get("name"),
+      email: data.get("email"),
+      message: data.get("message"),
+      website: data.get("website"),
+    };
 
     try {
       const response = await fetch("/api/contact", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          name: data.get("name"),
-          email: data.get("email"),
-          message: data.get("message"),
-          website: data.get("website"),
-        }),
+        body: JSON.stringify(payload),
       });
-      const payload = (await response.json().catch(() => null)) as {
+      const result = (await response.json().catch(() => null)) as {
         error?: string;
+        fallback?: boolean;
+        ok?: boolean;
       } | null;
-      if (!response.ok) {
-        throw new Error(payload?.error || "No se pudo enviar el mensaje.");
+
+      if (response.status === 400) {
+        throw new Error(result?.error || "Revisá los datos del formulario.");
       }
+      if (response.ok) {
+        setSent(true);
+        return;
+      }
+
+      await sendWithFormSubmit({
+        name: String(payload.name ?? ""),
+        email: String(payload.email ?? ""),
+        message: String(payload.message ?? ""),
+      });
       setSent(true);
     } catch (submitError) {
       setError(
@@ -50,8 +101,9 @@ export function ContactForm() {
       <div className="rounded-2xl bg-white p-8 shadow-sm">
         <h2 className="font-serif text-3xl text-cedar">Gracias</h2>
         <p className="mt-4 text-muted">
-          Recibimos tu mensaje. Si es urgente, escribinos por WhatsApp al{" "}
-          {site.phoneDisplay}.
+          Recibimos tu mensaje en {site.email}. Si es la primera vez, puede
+          llegar un mail de confirmación a esa casilla: hay que abrirlo y
+          aceptar. Si es urgente, escribinos por WhatsApp al {site.phoneDisplay}.
         </p>
       </div>
     );
@@ -59,7 +111,7 @@ export function ContactForm() {
 
   return (
     <form onSubmit={onSubmit} className="rounded-2xl bg-white p-8 shadow-sm">
-      <h2 className="font-serif text-3xl text-cedar">Escribinos</h2>
+      <h2 className="font-serif text-3xl text-cedar">Escribenos</h2>
       <label className="mt-6 block text-sm">
         Nombre
         <input

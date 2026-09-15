@@ -21,10 +21,10 @@ export async function POST(request: Request) {
     await sendContactMessage(parsed);
     return NextResponse.json({ ok: true });
   } catch (error) {
+    if (error instanceof Error && error.message === "NO_RESEND") {
+      return NextResponse.json({ fallback: true }, { status: 501 });
+    }
     console.error("Contact form email failed", error);
-    return NextResponse.json(
-      { error: "No se pudo enviar el mensaje. Probá de nuevo en un momento." },
-      { status: 502 },
-    );
+    return NextResponse.json({ fallback: true }, { status: 502 });
   }
 }
