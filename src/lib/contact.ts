@@ -1,5 +1,5 @@
 export const contactInbox =
-  process.env.CONTACT_EMAIL?.trim() || "ygorandresespinoza@gmail.com";
+  process.env.CONTACT_EMAIL?.trim() || "cedrusrestaurantycafe@gmail.com";
 
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 

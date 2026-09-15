@@ -31,7 +31,13 @@ export default function ContactPage() {
                 </a>
               </li>
               <li>
-                <strong className="text-ink">Cartas.</strong> Lunes a sábado · Domingo
+                <strong className="text-ink">Email.</strong>{" "}
+                <a
+                  className="text-cedar underline"
+                  href={`mailto:${site.email}`}
+                >
+                  {site.email}
+                </a>
               </li>
             </ul>
           </div>
