@@ -134,6 +134,27 @@ const defs: Array<{
     imageUrl: "/platos/espresso-martini.jpg",
   },
   {
+    id: "vinos-zona",
+    name: "Vinos de la zona",
+    category: "Vinos",
+    description: "Vinos de la zona.",
+    imageUrl: "/platos/vinos-zona.jpg",
+  },
+  {
+    id: "vinos-blancos",
+    name: "Vinos blancos",
+    category: "Vinos",
+    description: "Vinos blancos.",
+    imageUrl: "/platos/vinos-blancos.jpg",
+  },
+  {
+    id: "vinos-tintos",
+    name: "Vinos tintos",
+    category: "Vinos",
+    description: "Vinos tintos.",
+    imageUrl: "/platos/vinos-tintos.jpg",
+  },
+  {
     id: "decantador-vino",
     name: "Sangría",
     category: "Tragos",
