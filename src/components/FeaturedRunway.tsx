@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import { useEffect, useRef } from "react";
-import { formatPrice } from "@/lib/money";
 import type { HighlightSlide } from "@/lib/highlights";
 
 export function FeaturedRunway({ items }: { items: HighlightSlide[] }) {
@@ -81,11 +80,6 @@ export function FeaturedRunway({ items }: { items: HighlightSlide[] }) {
               <h3 className="font-serif mt-2 text-2xl text-cedar">{item.name}</h3>
               {item.description ? (
                 <p className="mt-2 text-sm text-muted">{item.description}</p>
-              ) : null}
-              {item.price ? (
-                <p className="mt-4 font-medium text-cedar">
-                  {formatPrice(item.price)}
-                </p>
               ) : null}
             </div>
           </article>

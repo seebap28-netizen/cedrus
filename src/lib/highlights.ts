@@ -5,7 +5,6 @@ export type HighlightSlide = {
   name: string;
   category: string;
   description: string;
-  price: number | null;
   imageUrl: string;
 };
 
@@ -212,7 +211,6 @@ export function homeHighlights(
       name: def.name || product?.name || "Cedrus",
       category: def.category || (product ? categoryName(product.categoryId) : ""),
       description: def.description || product?.description || "",
-      price: product?.price ?? null,
       imageUrl: product?.imageUrl || def.imageUrl,
     };
   });
