@@ -101,12 +101,8 @@ export default async function HomePage() {
         <section className="bg-cedar text-cream">
           <div className="mx-auto grid max-w-6xl gap-10 px-6 py-20 md:grid-cols-2 md:items-center">
             <div>
-              <p className="text-xs uppercase tracking-[0.3em] text-gold">
-                Cedrus Café Restaurante
-              </p>
-              <h2 className="font-serif mt-3 text-4xl">
-                Un lugar para encontrarse y quedarse
-              </h2>
+              <p className="text-xs uppercase tracking-[0.3em] text-gold">Cedrus</p>
+              <h2 className="font-serif mt-3 text-4xl">Un lugar para quedarse</h2>
               <p className="mt-5 leading-7 text-cream/80">
                 Un espacio pensado para disfrutar en cualquier ocasión, con
                 salones climatizados y mesas al aire libre, ideales para
@@ -119,6 +115,9 @@ export default async function HomePage() {
               <p className="mt-5 leading-7 text-cream/80">
                 22 años creando momentos, compartiendo sabores y siendo parte de
                 tus mejores encuentros.
+              </p>
+              <p className="font-serif mt-6 text-xl text-cream">
+                Cedrus Café Restaurante un lugar para encontrarse y quedarse
               </p>
             </div>
             <div className="relative h-80 overflow-hidden rounded-2xl">
