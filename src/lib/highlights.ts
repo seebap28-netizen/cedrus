@@ -236,13 +236,6 @@ const defs: Array<{
     imageUrl: "/platos/tragos-copa.jpg",
   },
   {
-    id: "coctel-corazones",
-    name: "Cóctel de la casa",
-    category: "Tragos",
-    description: "Tragos de la casa, para celebrar.",
-    imageUrl: "/platos/coctel-corazones.jpg",
-  },
-  {
     id: "espresso-martini",
     name: "Espresso martini",
     category: "Tragos",
