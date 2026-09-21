@@ -19,7 +19,6 @@ const defs: Array<{
 }> = [
   {
     id: "torta-amor",
-    productId: "prod-torta-amor",
     name: "Torta a pedido",
     category: "Pastelería",
     description: "Tortas a pedido",
