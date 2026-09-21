@@ -177,9 +177,9 @@ const defs: Array<{
   },
   {
     id: "ensalada-camarones",
-    name: "Tabla Cedrus",
-    category: "Tablas",
-    description: "Tablas para compartir.",
+    name: "Ensalada Cedrus",
+    category: "Ensaladas",
+    description: "Ensalada Cedrus.",
     imageUrl: "/platos/ensalada-camarones.jpg",
   },
   {
