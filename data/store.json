@@ -3040,7 +3040,7 @@
     },
     {
       "id": "prod-expresso-martini",
-      "name": "Expresso martini",
+      "name": "Espresso martini",
       "description": "Shot de espresso, vodka y licor de café.",
       "price": 6900,
       "categoryId": "cat-tragos",
@@ -3106,7 +3106,7 @@
     {
       "id": "prod-sour-cherry",
       "name": "Sour cherry",
-      "description": "Jugo de limón, azúcar y whisky.",
+      "description": "Jugo de limón, azúcar y whisky Ballantines de cherry.",
       "price": 4900,
       "categoryId": "cat-sour",
       "imageUrl": "",

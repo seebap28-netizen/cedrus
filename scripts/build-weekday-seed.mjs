@@ -272,13 +272,13 @@ const items = [
   ["prod-ruso-negro", "Ruso negro", "Vodka y licor de café.", 5400, "cat-tragos"],
   ["prod-ruso-blanco", "Ruso blanco", "Vodka, licor de café y crema de leche.", 5800, "cat-tragos"],
   ["prod-daikiri-sabores", "Daikiri sabores", "Ron blanco, jugo de limón, azúcar y sabor a elección.", 6700, "cat-tragos"],
-  ["prod-expresso-martini", "Expresso martini", "Shot de espresso, vodka y licor de café.", 6900, "cat-tragos"],
+  ["prod-expresso-martini", "Espresso martini", "Shot de espresso, vodka y licor de café.", 6900, "cat-tragos"],
 
   ["prod-pisco-sour", "Pisco sour", "Jugo de limón, azúcar y pisco.", 4500, "cat-sour"],
   ["prod-sour-sabores", "Sour sabores", "Jugo de limón, azúcar, pisco y sabor a elección.", 5500, "cat-sour"],
   ["prod-amaretto-sour", "Amaretto sour", "Jugo de limón, azúcar y Amaretto.", 4200, "cat-sour"],
   ["prod-whisky-sour", "Whisky sour", "Jugo de limón, azúcar y whisky.", 4500, "cat-sour"],
-  ["prod-sour-cherry", "Sour cherry", "Jugo de limón, azúcar y whisky.", 4900, "cat-sour"],
+  ["prod-sour-cherry", "Sour cherry", "Jugo de limón, azúcar y whisky Ballantines de cherry.", 4900, "cat-sour"],
 
   ["prod-gin-tonic", "Gin tonic", "Gin y tónica a elección (tradicional o pink).", 7200, "cat-gin"],
   ["prod-gin-bebida", "Gin con bebida", "Gin y bebida a elección.", 6500, "cat-gin"],

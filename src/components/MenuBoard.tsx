@@ -93,14 +93,8 @@ export function MenuBoard({ categories, products, menu }: Props) {
                 } ${categorySheetClass(category.id)}`}
               >
                 <header
-                  className={`relative px-6 pb-2 pt-8 text-center ${categoryHeaderClass(category.id)}`}
+                  className={`px-6 pb-2 pt-8 text-center ${categoryHeaderClass(category.id)}`}
                 >
-                  <MenuArt
-                    categoryId={category.id}
-                    className={`absolute right-3 top-3 h-14 w-14 rounded-full object-cover md:hidden ${
-                      dark ? "ring-1 ring-white/25" : "ring-1 ring-black/10"
-                    }`}
-                  />
                   <h2
                     className={`font-serif text-4xl uppercase tracking-[0.18em] ${
                       dark ? "text-cream" : "text-ink"
