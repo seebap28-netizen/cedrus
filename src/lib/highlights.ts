@@ -40,21 +40,6 @@ const defs: Array<{
     imageUrl: "/platos/torta-cumpleanos.jpg",
   },
   {
-    id: "cafe-love",
-    productId: "prod-capuchino-grande",
-    name: "Café Love",
-    category: "Cafetería",
-    description: "Cafés de la casa, para compartir.",
-    imageUrl: "/platos/cafe-love.jpg",
-  },
-  {
-    id: "coctel-cedrus",
-    name: "Cócteles",
-    category: "Tragos",
-    description: "Tragos de la casa, para celebrar.",
-    imageUrl: "/platos/coctel-cedrus.jpg",
-  },
-  {
     id: "torta-frutillas",
     name: "Torta de frutillas",
     category: "Pastelería",
@@ -95,13 +80,6 @@ const defs: Array<{
     category: "Pastelería",
     description: "Tortas a pedido, según el día.",
     imageUrl: "/platos/torta-flores-rojas.jpg",
-  },
-  {
-    id: "volcan-chocolate",
-    name: "Volcán de chocolate",
-    category: "Pastelería",
-    description: "Postres de la casa, según el día.",
-    imageUrl: "/platos/volcan-chocolate.jpg",
   },
   {
     id: "torta-cumpleanos-2",
@@ -151,20 +129,6 @@ const defs: Array<{
     category: "Platos",
     description: "Platos de la casa, según el día.",
     imageUrl: "/platos/gratinado.jpg",
-  },
-  {
-    id: "pasta",
-    name: "Pastas",
-    category: "Platos",
-    description: "Platos de la casa, según el día.",
-    imageUrl: "/platos/pasta.jpg",
-  },
-  {
-    id: "churros",
-    name: "Churros",
-    category: "Pastelería",
-    description: "Dulces de la casa, según el día.",
-    imageUrl: "/platos/churros.jpg",
   },
   {
     id: "tabla-compartir",
