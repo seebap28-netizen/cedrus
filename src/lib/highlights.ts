@@ -100,7 +100,7 @@ const defs: Array<{
   },
   {
     id: "gin-morado",
-    name: "Gin",
+    name: "Ramazzotti",
     category: "Tragos",
     description: "Tragos de la casa, para celebrar.",
     imageUrl: "/platos/gin-morado.jpg",
@@ -135,16 +135,16 @@ const defs: Array<{
   },
   {
     id: "decantador-vino",
-    name: "Vinos",
+    name: "Sangría",
     category: "Tragos",
-    description: "Vinos y tragos de la casa.",
+    description: "Sangría de la casa.",
     imageUrl: "/platos/decantador-vino.jpg",
   },
   {
     id: "ensalada-papas",
-    name: "Ensaladas",
-    category: "Ensaladas",
-    description: "Ensaladas de la casa, para compartir.",
+    name: "Tabla Cedrus",
+    category: "Tablas",
+    description: "Tablas para compartir.",
     imageUrl: "/platos/ensalada-papas.jpg",
   },
   {
@@ -156,9 +156,9 @@ const defs: Array<{
   },
   {
     id: "ensalada-camarones",
-    name: "Ensalada de camarones",
-    category: "Ensaladas",
-    description: "Ensaladas de la casa.",
+    name: "Tabla Cedrus",
+    category: "Tablas",
+    description: "Tablas para compartir.",
     imageUrl: "/platos/ensalada-camarones.jpg",
   },
   {
