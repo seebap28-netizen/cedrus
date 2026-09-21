@@ -4,7 +4,6 @@ import {
   categoryHeaderClass,
   categorySheetClass,
   isDarkCategory,
-  MenuArt,
 } from "@/components/MenuArt";
 import type { Category, MenuId, Product } from "@/lib/types";
 
@@ -68,14 +67,8 @@ export function MenuBoard({ categories, products, menu }: Props) {
               <a
                 key={category.id}
                 href={`#${category.id}`}
-                className="inline-flex items-center text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
+                className="text-[11px] uppercase tracking-[0.18em] text-cedar hover:text-gold"
               >
-                <span className="mr-1.5 inline-flex items-center" aria-hidden>
-                  <MenuArt
-                    categoryId={category.id}
-                    className="h-5 w-5 rounded-full object-cover ring-1 ring-cedar/20"
-                  />
-                </span>
                 {category.name}
               </a>
             ))}
@@ -109,7 +102,7 @@ export function MenuBoard({ categories, products, menu }: Props) {
                   />
                 </header>
 
-                <div className="grid gap-6 px-6 py-8 md:grid-cols-[minmax(0,1fr)_10rem] md:items-start">
+                <div className="px-6 py-8">
                   <ul>
                     {items.map((product) => (
                       <li key={product.id} className="py-2.5">
@@ -152,15 +145,6 @@ export function MenuBoard({ categories, products, menu }: Props) {
                       </li>
                     ))}
                   </ul>
-
-                  <aside className="hidden flex-col items-center justify-start md:flex">
-                    <MenuArt
-                      categoryId={category.id}
-                      className={`h-36 w-36 rounded-full object-cover ${
-                        dark ? "ring-1 ring-white/25" : "ring-1 ring-black/10"
-                      }`}
-                    />
-                  </aside>
                 </div>
 
                 {category.description ? (
